@@ -9,263 +9,232 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Fredoka:wght@400;500;600;700&family=Nunito+Sans:ital,opsz,wght@0,6..12,400;0,6..12,600;0,6..12,700;0,6..12,800;0,6..12,900&display=swap" rel="stylesheet">
-<style>
-  *{box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{margin:0;background:#1A1512}
-  a{color:#E23A2E;text-decoration:none}
-  a:hover{color:#2A3BC4}
-  ::selection{background:#F4B12A;color:#1A1512}
-  input,textarea{font-family:'Nunito Sans',sans-serif}
-  input:focus,textarea:focus{outline:none;box-shadow:4px 4px 0 #E23A2E}
-  @keyframes mmfloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-  @keyframes mmtwinkle{0%,100%{opacity:.35;transform:rotate(45deg) scale(.85)}50%{opacity:1;transform:rotate(45deg) scale(1.15)}}
-
-  /* nav links */
-  .nav-link:hover{color:#E23A2E}
-
-  /* pixel buttons: base + hover + active offsets, color via --sc */
-  .pixel-btn{box-shadow:5px 5px 0 var(--sc);transition:none}
-  .pixel-btn:hover{transform:translate(2px,2px);box-shadow:3px 3px 0 var(--sc)}
-  .pixel-btn:active{transform:translate(5px,5px);box-shadow:0 0 0 var(--sc)}
-
-  .pixel-btn-sm{box-shadow:3px 3px 0 var(--sc)}
-  .pixel-btn-sm:hover{transform:translate(1px,1px);box-shadow:2px 2px 0 var(--sc)}
-  .pixel-btn-sm:active{transform:translate(3px,3px);box-shadow:0 0 0 var(--sc)}
-
-  .pixel-btn-submit{box-shadow:6px 6px 0 var(--sc)}
-  .pixel-btn-submit:hover{transform:translate(2px,2px);box-shadow:4px 4px 0 var(--sc)}
-  .pixel-btn-submit:active{transform:translate(6px,6px);box-shadow:0 0 0 var(--sc)}
-
-  .social-link:hover{background:var(--hc);border-color:var(--hc)}
-
-  /* image placeholders (final art goes here later) */
-  .img-slot{position:absolute;inset:0;width:100%;height:100%;display:flex;align-items:center;justify-content:center;text-align:center;background:#C7BFB0;border:2px dashed rgba(26,21,18,.35);color:rgba(26,21,18,.55);font-size:13px;font-weight:600;padding:12px;font-family:'Nunito Sans',sans-serif}
-</style>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<div id="app" style="font-family:'Nunito Sans',sans-serif;background:#F6EDD9;color:#1A1512;-webkit-font-smoothing:antialiased">
+<div id="app">
 
   <!-- ============ NAV ============ -->
-  <header style="position:sticky;top:0;z-index:60;background:#F6EDD9;border-bottom:3px solid #1A1512">
-    <div style="max-width:1200px;margin:0 auto;padding:11px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px">
-      <a href="#top" style="display:flex;align-items:center;gap:11px">
-        <img src="assets/mutum-bird.png" alt="Motion Mutum Estúdio" style="height:44px;width:auto;filter:drop-shadow(2px 2px 0 rgba(26,21,18,.18))">
-        <span style="font-family:'Press Start 2P',monospace;font-size:11px;line-height:1.5;color:#1A1512;letter-spacing:1px">MOTION<br>MUTUM</span>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#top" class="brand">
+        <img src="assets/mutum-bird.png" alt="Motion Mutum Estúdio" class="brand-icon">
+        <span class="brand-name">MOTION<br>MUTUM</span>
       </a>
-      <nav style="display:flex;align-items:center;gap:26px">
-        <a class="nav-link" data-en="Games" href="#games" style="font-weight:800;font-size:13px;color:#1A1512;text-transform:uppercase;letter-spacing:.6px">Jogos</a>
-        <a class="nav-link" data-en="Animation" href="#anim" style="font-weight:800;font-size:13px;color:#1A1512;text-transform:uppercase;letter-spacing:.6px">Animação</a>
-        <a class="nav-link" data-en="Studio" href="#studio" style="font-weight:800;font-size:13px;color:#1A1512;text-transform:uppercase;letter-spacing:.6px">Estúdio</a>
-        <a class="nav-link" data-en="Team" href="#team" style="font-weight:800;font-size:13px;color:#1A1512;text-transform:uppercase;letter-spacing:.6px">Equipe</a>
-        <a class="nav-link" data-en="Contact" href="#contact" style="font-weight:800;font-size:13px;color:#1A1512;text-transform:uppercase;letter-spacing:.6px">Contato</a>
-        <button class="pixel-btn-sm" data-langbtn onclick="toggleLang()" style="--sc:#1A1512;font-family:'Press Start 2P',monospace;font-size:10px;color:#F6EDD9;background:#2A3BC4;border:3px solid #1A1512;padding:9px 11px;cursor:pointer">EN</button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
+      <nav class="nav-links" id="navLinks">
+        <a class="nav-link" data-en="Games" href="#games">Jogos</a>
+        <a class="nav-link" data-en="Animation" href="#anim">Animação</a>
+        <a class="nav-link" data-en="Studio" href="#studio">Estúdio</a>
+        <a class="nav-link" data-en="Team" href="#team">Equipe</a>
+        <a class="nav-link" data-en="Contact" href="#contact">Contato</a>
+        <button class="btn btn--sm" data-langbtn style="--sc:#1A1512">EN</button>
       </nav>
     </div>
   </header>
 
   <!-- ============ HERO ============ -->
-  <section id="top" style="position:relative;overflow:hidden;background:#1A1512;color:#F6EDD9;border-bottom:3px solid #1A1512;background-image:radial-gradient(rgba(246,237,217,.09) 1.5px,transparent 1.6px);background-size:24px 24px">
-    <div style="position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(0,0,0,.22) 0 2px,transparent 2px 4px);opacity:.22"></div>
-    <div style="position:absolute;top:14%;left:6%;width:14px;height:14px;background:#F4B12A;animation:mmtwinkle 3s ease-in-out infinite"></div>
-    <div style="position:absolute;top:66%;left:11%;width:10px;height:10px;background:#E23A2E;animation:mmtwinkle 2.4s ease-in-out infinite .6s"></div>
-    <div style="position:absolute;top:22%;right:9%;width:12px;height:12px;background:#2A3BC4;animation:mmtwinkle 2.8s ease-in-out infinite .3s"></div>
-    <div style="position:absolute;bottom:16%;right:16%;width:9px;height:9px;background:#F4B12A;animation:mmtwinkle 3.2s ease-in-out infinite .9s"></div>
+  <section id="top" class="hero">
+    <div class="hero-scanlines"></div>
+    <div class="twinkle twinkle-1"></div>
+    <div class="twinkle twinkle-2"></div>
+    <div class="twinkle twinkle-3"></div>
+    <div class="twinkle twinkle-4"></div>
 
-    <div style="position:relative;max-width:1200px;margin:0 auto;padding:74px 24px 78px;display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center">
+    <div class="container hero-grid">
       <div>
-        <div style="display:inline-flex;align-items:center;gap:9px;font-family:'Press Start 2P',monospace;font-size:10px;color:#1A1512;background:#F4B12A;border:3px solid #1A1512;padding:9px 13px;box-shadow:4px 4px 0 #E23A2E;letter-spacing:.5px">★ <span data-en="From Alagoas to the world">De Alagoas para o mundo</span></div>
-        <h1 style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:54px;line-height:1.04;margin:26px 0 0;color:#F6EDD9;text-wrap:balance"><span data-en="We make games &amp; shorts">Fazemos jogos e curtas</span> <span style="color:#F4B12A" data-en="with a Brazilian soul.">com alma brasileira.</span></h1>
-        <p style="font-size:18px;line-height:1.65;margin:22px 0 0;max-width:30em;color:rgba(246,237,217,.82)" data-en="Motion Mutum is an independent studio born in Alagoas, blending pixel art, folklore and a lot of love for every single frame.">A Motion Mutum é um estúdio independente que nasce em Alagoas, misturando pixel art, folclore e muito carinho por cada quadro.</p>
-        <div style="display:flex;flex-wrap:wrap;gap:16px;margin-top:32px">
-          <a class="pixel-btn" href="#anim" style="--sc:#E23A2E;display:inline-flex;align-items:center;gap:10px;font-family:'Press Start 2P',monospace;font-size:11px;color:#1A1512;background:#F4B12A;border:3px solid #1A1512;padding:16px 22px"><span style="font-size:13px">▶</span><span data-en="Watch showreel">Ver showreel</span></a>
-          <a class="pixel-btn" href="#games" style="--sc:#2A3BC4;display:inline-flex;align-items:center;gap:10px;font-family:'Press Start 2P',monospace;font-size:11px;color:#F6EDD9;background:transparent;border:3px solid #F6EDD9;padding:16px 22px"><span data-en="Meet EVOLUA!">Conheça EVOLUA!</span><span>→</span></a>
+        <div class="eyebrow" style="--fg:#1A1512;--bg:#F4B12A;--sh:#E23A2E">★ <span data-en="From Alagoas to the world">De Alagoas para o mundo</span></div>
+        <h1 class="hero-title"><span data-en="We make games &amp; shorts">Fazemos jogos e curtas</span> <span style="color:var(--gold)" data-en="with a Brazilian soul.">com alma brasileira.</span></h1>
+        <p class="hero-lede" data-en="Motion Mutum is an independent studio born in Alagoas, blending pixel art, folklore and a lot of love for every single frame.">A Motion Mutum é um estúdio independente que nasce em Alagoas, misturando pixel art, folclore e muito carinho por cada quadro.</p>
+        <div class="hero-ctas">
+          <a class="btn btn--lg btn--fill" href="#anim" style="--sc:#E23A2E"><span class="btn-icon">▶</span><span data-en="Watch showreel">Ver showreel</span></a>
+          <a class="btn btn--lg btn--outline" href="#games" style="--sc:#2A3BC4"><span data-en="Meet EVOLUA!">Conheça EVOLUA!</span><span>→</span></a>
         </div>
       </div>
-      <div style="display:flex;justify-content:center;align-items:center;animation:mmfloat 6s ease-in-out infinite">
-        <div style="position:relative;background:#C7BFB0;border:3px solid #1A1512;box-shadow:12px 12px 0 #F4B12A;padding:26px">
-          <img src="assets/mutum-logo.png" alt="Motion Mutum Estúdio" style="width:100%;max-width:420px;display:block">
-          <div style="position:absolute;bottom:-16px;left:-16px;font-family:'Press Start 2P',monospace;font-size:9px;color:#1A1512;background:#F6EDD9;border:3px solid #1A1512;padding:7px 10px">EST. 2026</div>
+      <div class="hero-figure">
+        <div class="logo-frame">
+          <img src="assets/mutum-logo.png" alt="Motion Mutum Estúdio" class="logo-img">
+          <div class="est-badge">EST. 2026</div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ============ GAMES / EVOLUA ============ -->
-  <section id="games" style="background:#F6EDD9;padding:82px 24px;border-bottom:3px solid #1A1512">
-    <div style="max-width:1200px;margin:0 auto">
-      <div style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:16px">
+  <section id="games" class="section section-pad bg-cream">
+    <div class="container">
+      <div class="section-head">
         <div>
-          <div style="display:inline-flex;align-items:center;gap:8px;font-family:'Press Start 2P',monospace;font-size:10px;color:#E23A2E;background:#fff;border:3px solid #1A1512;padding:8px 12px;box-shadow:4px 4px 0 #1A1512">● <span data-en="IN DEVELOPMENT">EM DESENVOLVIMENTO</span></div>
-          <h2 style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:44px;line-height:1.05;margin:18px 0 0" data-en="Our games">Nossos jogos</h2>
+          <div class="eyebrow" style="--fg:#E23A2E">● <span data-en="IN DEVELOPMENT">EM DESENVOLVIMENTO</span></div>
+          <h2 class="section-title" data-en="Our games">Nossos jogos</h2>
         </div>
-        <p style="font-size:16px;line-height:1.6;max-width:26em;color:rgba(26,21,18,.72);margin:0" data-en="Handcrafted pixel-art worlds — one project at a time, made to last.">Mundos em pixel art feitos à mão — um projeto de cada vez, feito para durar.</p>
+        <p class="games-summary" data-en="Handcrafted pixel-art worlds — one project at a time, made to last.">Mundos em pixel art feitos à mão — um projeto de cada vez, feito para durar.</p>
       </div>
 
       <!-- feature card -->
-      <div style="margin-top:34px;display:grid;grid-template-columns:1.08fr .92fr;background:#2A3BC4;border:3px solid #1A1512;box-shadow:12px 12px 0 #1A1512;overflow:hidden">
-        <div style="position:relative;min-height:430px;border-right:3px solid #1A1512">
+      <div class="feature-grid" style="margin-top:34px">
+        <div class="feature-media">
           <div class="img-slot">EVOLUA! — key art / gameplay</div>
         </div>
-        <div style="padding:40px 38px;color:#F6EDD9;display:flex;flex-direction:column;justify-content:center">
-          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px">
-            <span style="font-family:'Press Start 2P',monospace;font-size:9px;color:#1A1512;background:#F4B12A;border:2px solid #1A1512;padding:6px 9px">PIXEL ART</span>
-            <span style="font-family:'Press Start 2P',monospace;font-size:9px;color:#F6EDD9;background:#E23A2E;border:2px solid #1A1512;padding:6px 9px" data-en="RUNNING / PLATFORMER">RUNNING / PLATAFORMA</span>
-            <span style="font-family:'Press Start 2P',monospace;font-size:9px;color:#F6EDD9;background:transparent;border:2px solid #F6EDD9;padding:6px 9px">PC / MOBILE</span>
+        <div class="feature-copy">
+          <div class="tag-row">
+            <span class="tag" style="--bg:#F4B12A">PIXEL ART</span>
+            <span class="tag" style="--bg:#E23A2E;--fg:#F6EDD9" data-en="RUNNING / PLATFORMER">RUNNING / PLATAFORMA</span>
+            <span class="tag" style="--fg:#F6EDD9;--bd:#F6EDD9">PC / MOBILE</span>
           </div>
-          <h3 style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:52px;line-height:.95;margin:0;color:#F4B12A;text-shadow:4px 4px 0 rgba(0,0,0,.35)">EVOLUA!</h3>
-          <p style="font-size:16.5px;line-height:1.6;margin:18px 0 0;color:rgba(246,237,217,.92)" data-en="A running/platformer set in the Cretaceous. You play an ancestral bird — parent of all living birds — able to morph into other birds depending on the seed it eats, joined by a shape-shifting prehistoric mammal. Cross biomes, dodge beasts and obstacles, and find your way back to the nest.">Um running/plataforma ambientado no Cretáceo. Você controla uma ave ancestral — mãe de todas as aves atuais — capaz de assumir a forma de outras aves conforme a semente que come, ao lado de um pequeno mamífero pré-histórico metamórfico. Atravesse biomas, escape de feras e obstáculos e volte ao ninho.</p>
-          <p style="font-size:14px;line-height:1.55;margin:12px 0 0;color:rgba(246,237,217,.72)" data-en="A playful, educational take on evolution by natural selection — with creatures inspired by Brazilian species, prehistoric and modern.">Uma visão lúdica e educativa da evolução por seleção natural — com criaturas inspiradas em espécies brasileiras, pré-históricas e atuais.</p>
-          <div style="display:flex;flex-wrap:wrap;gap:14px;margin-top:28px">
-            <button class="pixel-btn" onclick="toggleWishlist(event)" data-on="0" style="--sc:#1A1512;display:inline-flex;align-items:center;gap:9px;font-family:'Press Start 2P',monospace;font-size:10px;color:#1A1512;background:#F4B12A;border:3px solid #1A1512;padding:15px 18px;cursor:pointer">★ <span data-wl data-en="Add to wishlist">Adicionar à wishlist</span></button>
-            <a class="pixel-btn" href="#anim" style="--sc:rgba(0,0,0,.35);display:inline-flex;align-items:center;gap:9px;font-family:'Press Start 2P',monospace;font-size:10px;color:#F6EDD9;background:transparent;border:3px solid #F6EDD9;padding:15px 18px"><span style="font-size:12px">▶</span><span data-en="Watch trailer">Ver trailer</span></a>
+          <h3 class="evolua-title">EVOLUA!</h3>
+          <p class="evolua-lede" data-en="A running/platformer set in the Cretaceous. You play an ancestral bird — parent of all living birds — able to morph into other birds depending on the seed it eats, joined by a shape-shifting prehistoric mammal. Cross biomes, dodge beasts and obstacles, and find your way back to the nest.">Um running/plataforma ambientado no Cretáceo. Você controla uma ave ancestral — mãe de todas as aves atuais — capaz de assumir a forma de outras aves conforme a semente que come, ao lado de um pequeno mamífero pré-histórico metamórfico. Atravesse biomas, escape de feras e obstáculos e volte ao ninho.</p>
+          <p class="evolua-sublede" data-en="A playful, educational take on evolution by natural selection — with creatures inspired by Brazilian species, prehistoric and modern.">Uma visão lúdica e educativa da evolução por seleção natural — com criaturas inspiradas em espécies brasileiras, pré-históricas e atuais.</p>
+          <div class="evolua-ctas">
+            <button class="btn btn--fill" id="wishlistBtn" data-on="0" style="--sc:#1A1512">★ <span data-wl data-en="Add to wishlist">Adicionar à wishlist</span></button>
+            <a class="btn btn--outline" href="#anim" style="--sc:rgba(0,0,0,.35)"><span class="btn-icon">▶</span><span data-en="Watch trailer">Ver trailer</span></a>
           </div>
         </div>
       </div>
 
       <!-- screenshot strip -->
-      <div style="margin-top:22px;display:grid;grid-template-columns:repeat(3,1fr);gap:22px">
-        <div style="position:relative;height:200px;border:3px solid #1A1512;box-shadow:6px 6px 0 #1A1512"><div class="img-slot">Screenshot 01</div></div>
-        <div style="position:relative;height:200px;border:3px solid #1A1512;box-shadow:6px 6px 0 #1A1512"><div class="img-slot">Screenshot 02</div></div>
-        <div style="position:relative;height:200px;border:3px solid #1A1512;box-shadow:6px 6px 0 #1A1512"><div class="img-slot">Screenshot 03</div></div>
+      <div class="shot-grid" style="margin-top:22px">
+        <div class="shot-box"><div class="img-slot">Screenshot 01</div></div>
+        <div class="shot-box"><div class="img-slot">Screenshot 02</div></div>
+        <div class="shot-box"><div class="img-slot">Screenshot 03</div></div>
       </div>
     </div>
   </section>
 
   <!-- ============ ANIMATION ============ -->
-  <section id="anim" style="background:#EFE3C9;padding:82px 24px;border-bottom:3px solid #1A1512;background-image:radial-gradient(rgba(26,21,18,.05) 1.5px,transparent 1.6px);background-size:24px 24px">
-    <div style="max-width:1200px;margin:0 auto">
+  <section id="anim" class="section section-pad bg-cream-alt">
+    <div class="container">
       <div style="text-align:center">
-        <div style="display:inline-flex;align-items:center;gap:8px;font-family:'Press Start 2P',monospace;font-size:10px;color:#2A3BC4;background:#fff;border:3px solid #1A1512;padding:8px 12px;box-shadow:4px 4px 0 #1A1512">▶ <span data-en="ANIMATED SHORTS">CURTAS DE ANIMAÇÃO</span></div>
-        <h2 style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:44px;line-height:1.05;margin:18px auto 0;max-width:16em" data-en="Frame by frame, from Alagoas">Quadro a quadro, direto de Alagoas</h2>
+        <div class="eyebrow" style="--fg:#2A3BC4">▶ <span data-en="ANIMATED SHORTS">CURTAS DE ANIMAÇÃO</span></div>
+        <h2 class="section-title" style="margin:18px auto 0;max-width:16em" data-en="Frame by frame, from Alagoas">Quadro a quadro, direto de Alagoas</h2>
       </div>
 
       <!-- showreel -->
-      <div style="margin-top:34px;position:relative;border:3px solid #1A1512;box-shadow:12px 12px 0 #1A1512;aspect-ratio:16/9;background:#1A1512">
+      <div class="showreel">
         <div class="img-slot">Showreel — drop a cover frame</div>
-        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none">
-          <div style="width:84px;height:84px;background:#F4B12A;border:4px solid #1A1512;box-shadow:6px 6px 0 rgba(0,0,0,.4);display:flex;align-items:center;justify-content:center;font-size:30px;color:#1A1512;padding-left:6px">▶</div>
+        <div class="showreel-overlay">
+          <div class="play-btn">▶</div>
         </div>
-        <div style="position:absolute;left:16px;bottom:16px;pointer-events:none;font-family:'Press Start 2P',monospace;font-size:10px;color:#F6EDD9;background:rgba(26,21,18,.75);border:2px solid #F6EDD9;padding:7px 10px" data-en="SHOWREEL 2026 · 02:14">SHOWREEL 2026 · 02:14</div>
+        <div class="showreel-caption" data-en="SHOWREEL 2026 · 02:14">SHOWREEL 2026 · 02:14</div>
       </div>
 
       <!-- shorts grid -->
-      <div style="margin-top:26px;display:grid;grid-template-columns:repeat(3,1fr);gap:22px">
-        <div style="background:#fff;border:3px solid #1A1512;box-shadow:7px 7px 0 #1A1512">
-          <div style="position:relative;aspect-ratio:4/3;border-bottom:3px solid #1A1512"><div class="img-slot">Curta 01</div></div>
-          <div style="padding:16px 18px"><div style="font-family:'Fredoka',sans-serif;font-weight:600;font-size:20px" data-en="The Curassow's Song">O Canto do Mutum</div><div style="font-family:'Press Start 2P',monospace;font-size:9px;color:#E23A2E;margin-top:8px" data-en="SHORT · COMING SOON">CURTA · EM BREVE</div></div>
+      <div class="shot-grid" style="margin-top:26px">
+        <div class="short-card">
+          <div class="short-media"><div class="img-slot">Curta 01</div></div>
+          <div class="short-body"><div class="short-title" data-en="The Curassow's Song">O Canto do Mutum</div><div class="short-status" style="--fg:#E23A2E" data-en="SHORT · COMING SOON">CURTA · EM BREVE</div></div>
         </div>
-        <div style="background:#fff;border:3px solid #1A1512;box-shadow:7px 7px 0 #1A1512">
-          <div style="position:relative;aspect-ratio:4/3;border-bottom:3px solid #1A1512"><div class="img-slot">Curta 02</div></div>
-          <div style="padding:16px 18px"><div style="font-family:'Fredoka',sans-serif;font-weight:600;font-size:20px" data-en="Backwater Tales">Causos do Sertão</div><div style="font-family:'Press Start 2P',monospace;font-size:9px;color:#2A3BC4;margin-top:8px" data-en="SHORT · COMING SOON">CURTA · EM BREVE</div></div>
+        <div class="short-card">
+          <div class="short-media"><div class="img-slot">Curta 02</div></div>
+          <div class="short-body"><div class="short-title" data-en="Backwater Tales">Causos do Sertão</div><div class="short-status" style="--fg:#2A3BC4" data-en="SHORT · COMING SOON">CURTA · EM BREVE</div></div>
         </div>
-        <div style="background:#fff;border:3px solid #1A1512;box-shadow:7px 7px 0 #1A1512">
-          <div style="position:relative;aspect-ratio:4/3;border-bottom:3px solid #1A1512"><div class="img-slot">Curta 03</div></div>
-          <div style="padding:16px 18px"><div style="font-family:'Fredoka',sans-serif;font-weight:600;font-size:20px" data-en="Lantern Moon">Lua de Mamulengo</div><div style="font-family:'Press Start 2P',monospace;font-size:9px;color:#F4B12A;margin-top:8px;-webkit-text-stroke:.4px #1A1512" data-en="SHORT · COMING SOON">CURTA · EM BREVE</div></div>
+        <div class="short-card">
+          <div class="short-media"><div class="img-slot">Curta 03</div></div>
+          <div class="short-body"><div class="short-title" data-en="Lantern Moon">Lua de Mamulengo</div><div class="short-status short-status--outline" style="--fg:#F4B12A" data-en="SHORT · COMING SOON">CURTA · EM BREVE</div></div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ============ STUDIO ============ -->
-  <section id="studio" style="position:relative;overflow:hidden;background:#1A1512;color:#F6EDD9;padding:84px 24px;border-bottom:3px solid #1A1512;background-image:radial-gradient(rgba(246,237,217,.08) 1.5px,transparent 1.6px);background-size:24px 24px">
-    <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center">
+  <section id="studio" class="section section-pad bg-ink">
+    <div class="container studio-grid">
       <div>
-        <div style="display:inline-flex;align-items:center;gap:8px;font-family:'Press Start 2P',monospace;font-size:10px;color:#1A1512;background:#F4B12A;border:3px solid #F6EDD9;padding:8px 12px;box-shadow:4px 4px 0 #E23A2E">★ <span data-en="THE STUDIO">O ESTÚDIO</span></div>
-        <h2 style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:44px;line-height:1.05;margin:18px 0 0;color:#F6EDD9" data-en="Why a curassow?">Por que um mutum?</h2>
-        <p style="font-size:17px;line-height:1.7;margin:20px 0 0;color:rgba(246,237,217,.85)" data-en="The Alagoas Curassow is one of the rarest birds in the world — a symbol of resilience and of our home state. Its colors echo the Alagoas flag: red, white and blue.">O mutum-de-alagoas é uma das aves mais raras do mundo — símbolo de resistência e do nosso estado natal. Suas cores ecoam a bandeira de Alagoas: vermelho, branco e azul.</p>
-        <p style="font-size:17px;line-height:1.7;margin:16px 0 0;color:rgba(246,237,217,.85)" data-en="We're a small, independent team making games and animation with regional roots and a whole lot of care. Slow, handmade, ours.">Somos um time pequeno e independente, fazendo jogos e animação com raiz regional e muito cuidado. Devagar, feito à mão, nosso.</p>
-        <p style="font-size:15px;line-height:1.65;margin:16px 0 0;color:rgba(246,237,217,.7)" data-en="An initiative supported by the City of Coruripe and its Culture Secretariat — which hosts our space. In return we run talks, workshops and the Municipal Library Film Club.">Iniciativa com apoio da Prefeitura de Coruripe e da Secretaria Municipal de Cultura — que cede nosso espaço. Como contrapartida, realizamos palestras, workshops e o Cineclube da Biblioteca Municipal.</p>
-        <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:28px">
-          <div style="font-family:'Press Start 2P',monospace;font-size:9px;color:#F6EDD9;background:transparent;border:2px solid #E23A2E;padding:9px 12px" data-en="INDEPENDENT">INDEPENDENTE</div>
-          <div style="font-family:'Press Start 2P',monospace;font-size:9px;color:#F6EDD9;background:transparent;border:2px solid #F6EDD9;padding:9px 12px" data-en="HANDMADE">FEITO À MÃO</div>
-          <div style="font-family:'Press Start 2P',monospace;font-size:9px;color:#F6EDD9;background:transparent;border:2px solid #2A3BC4;padding:9px 12px" data-en="MADE IN ALAGOAS">DE ALAGOAS</div>
+        <div class="eyebrow" style="--fg:#1A1512;--bg:#F4B12A;--bd:#F6EDD9;--sh:#E23A2E">★ <span data-en="THE STUDIO">O ESTÚDIO</span></div>
+        <h2 class="section-title" style="color:var(--cream)" data-en="Why a curassow?">Por que um mutum?</h2>
+        <p class="studio-copy" style="margin-top:20px" data-en="The Alagoas Curassow is one of the rarest birds in the world — a symbol of resilience and of our home state. Its colors echo the Alagoas flag: red, white and blue.">O mutum-de-alagoas é uma das aves mais raras do mundo — símbolo de resistência e do nosso estado natal. Suas cores ecoam a bandeira de Alagoas: vermelho, branco e azul.</p>
+        <p class="studio-copy" data-en="We're a small, independent team making games and animation with regional roots and a whole lot of care. Slow, handmade, ours.">Somos um time pequeno e independente, fazendo jogos e animação com raiz regional e muito cuidado. Devagar, feito à mão, nosso.</p>
+        <p class="studio-note" data-en="An initiative supported by the City of Coruripe and its Culture Secretariat — which hosts our space. In return we run talks, workshops and the Municipal Library Film Club.">Iniciativa com apoio da Prefeitura de Coruripe e da Secretaria Municipal de Cultura — que cede nosso espaço. Como contrapartida, realizamos palestras, workshops e o Cineclube da Biblioteca Municipal.</p>
+        <div class="studio-tags">
+          <div class="pill" style="--bd:#E23A2E" data-en="INDEPENDENT">INDEPENDENTE</div>
+          <div class="pill" data-en="HANDMADE">FEITO À MÃO</div>
+          <div class="pill" style="--bd:#2A3BC4" data-en="MADE IN ALAGOAS">DE ALAGOAS</div>
         </div>
       </div>
-      <div style="position:relative;border:3px solid #F6EDD9;box-shadow:12px 12px 0 rgba(0,0,0,.45);aspect-ratio:4/3">
+      <div class="studio-photo">
         <div class="img-slot">Foto do estúdio / equipe</div>
       </div>
     </div>
   </section>
 
   <!-- ============ TEAM ============ -->
-  <section id="team" style="background:#EFE3C9;padding:82px 24px;border-bottom:3px solid #1A1512;background-image:radial-gradient(rgba(26,21,18,.05) 1.5px,transparent 1.6px);background-size:24px 24px">
-    <div style="max-width:1200px;margin:0 auto">
+  <section id="team" class="section section-pad bg-cream-alt">
+    <div class="container">
       <div style="text-align:center">
-        <div style="display:inline-flex;align-items:center;gap:8px;font-family:'Press Start 2P',monospace;font-size:10px;color:#F4B12A;background:#1A1512;border:3px solid #1A1512;padding:8px 12px;box-shadow:4px 4px 0 #E23A2E">★ <span data-en="THE FLOCK">O BANDO</span></div>
-        <h2 style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:44px;line-height:1.05;margin:18px auto 0;max-width:15em" data-en="Four founders, one nest">Quatro fundadores, um ninho</h2>
-        <p style="font-size:16px;line-height:1.6;margin:14px auto 0;max-width:36em;color:rgba(26,21,18,.72)" data-en="Art, science, code and story — the mix behind Motion Mutum.">Arte, ciência, código e narrativa — a mistura por trás da Motion Mutum.</p>
+        <div class="eyebrow" style="--fg:#F4B12A;--bg:#1A1512;--sh:#E23A2E">★ <span data-en="THE FLOCK">O BANDO</span></div>
+        <h2 class="section-title" style="margin:18px auto 0;max-width:15em" data-en="Four founders, one nest">Quatro fundadores, um ninho</h2>
+        <p class="team-lede" data-en="Art, science, code and story — the mix behind Motion Mutum.">Arte, ciência, código e narrativa — a mistura por trás da Motion Mutum.</p>
       </div>
 
-      <div style="margin-top:38px;display:grid;grid-template-columns:repeat(4,1fr);gap:22px">
+      <div class="team-grid">
         <!-- Cássio -->
-        <div style="background:#fff;border:3px solid #1A1512;box-shadow:8px 8px 0 #1A1512;padding:22px 20px;display:flex;flex-direction:column">
-          <div style="position:relative;width:104px;height:104px;margin:0 auto;border:3px solid #1A1512;border-radius:50%;box-shadow:4px 4px 0 #E23A2E;overflow:hidden"><div class="img-slot" style="font-size:11px">Foto</div></div>
-          <div style="font-family:'Fredoka',sans-serif;font-weight:600;font-size:21px;text-align:center;margin-top:16px">Cássio Januário</div>
-          <div style="font-family:'Press Start 2P',monospace;font-size:8px;line-height:1.5;color:#E23A2E;text-align:center;margin-top:9px" data-en="ART &amp; ILLUSTRATION">ARTE &amp; ILUSTRAÇÃO</div>
-          <p style="font-size:13.5px;line-height:1.55;margin:14px 0 0;color:rgba(26,21,18,.72)" data-en="Systems Analysis grad. Painting, printmaking and digital art. Co-created the stop-motion short &quot;Tupi Or Not Tupi&quot; (2016).">Bacharel em Análise de Sistemas. Pintura, gravura e arte digital. Coautor do curta em stop motion &quot;Tupi Or Not Tupi&quot; (2016).</p>
+        <div class="team-card">
+          <div class="team-avatar" style="--sh:#E23A2E"><div class="img-slot img-slot--sm">Foto</div></div>
+          <div class="team-name">Cássio Januário</div>
+          <div class="team-role" style="--fg:#E23A2E" data-en="ART &amp; ILLUSTRATION">ARTE &amp; ILUSTRAÇÃO</div>
+          <p class="team-bio" data-en="Systems Analysis grad. Painting, printmaking and digital art. Co-created the stop-motion short &quot;Tupi Or Not Tupi&quot; (2016).">Bacharel em Análise de Sistemas. Pintura, gravura e arte digital. Coautor do curta em stop motion &quot;Tupi Or Not Tupi&quot; (2016).</p>
         </div>
         <!-- Erivelto -->
-        <div style="background:#fff;border:3px solid #1A1512;box-shadow:8px 8px 0 #1A1512;padding:22px 20px;display:flex;flex-direction:column">
-          <div style="position:relative;width:104px;height:104px;margin:0 auto;border:3px solid #1A1512;border-radius:50%;box-shadow:4px 4px 0 #2A3BC4;overflow:hidden"><div class="img-slot" style="font-size:11px">Foto</div></div>
-          <div style="font-family:'Fredoka',sans-serif;font-weight:600;font-size:21px;text-align:center;margin-top:16px">Erivelto Souza</div>
-          <div style="font-family:'Press Start 2P',monospace;font-size:8px;line-height:1.5;color:#2A3BC4;text-align:center;margin-top:9px" data-en="WRITING &amp; SCIENCE ART">ROTEIRO &amp; ARTE CIENTÍFICA</div>
-          <p style="font-size:13.5px;line-height:1.55;margin:14px 0 0;color:rgba(26,21,18,.72)" data-en="Biologist (herpetology, ornithology, paleontology). Writer and poet; 2D animation, stop motion and museum sculpture.">Biólogo (herpetologia, ornitologia, paleontologia). Roteirista e poeta; animação 2D, stop motion e escultura para museus.</p>
+        <div class="team-card">
+          <div class="team-avatar" style="--sh:#2A3BC4"><div class="img-slot img-slot--sm">Foto</div></div>
+          <div class="team-name">Erivelto Souza</div>
+          <div class="team-role" style="--fg:#2A3BC4" data-en="WRITING &amp; SCIENCE ART">ROTEIRO &amp; ARTE CIENTÍFICA</div>
+          <p class="team-bio" data-en="Biologist (herpetology, ornithology, paleontology). Writer and poet; 2D animation, stop motion and museum sculpture.">Biólogo (herpetologia, ornitologia, paleontologia). Roteirista e poeta; animação 2D, stop motion e escultura para museus.</p>
         </div>
         <!-- Isaac -->
-        <div style="background:#fff;border:3px solid #1A1512;box-shadow:8px 8px 0 #1A1512;padding:22px 20px;display:flex;flex-direction:column">
-          <div style="position:relative;width:104px;height:104px;margin:0 auto;border:3px solid #1A1512;border-radius:50%;box-shadow:4px 4px 0 #F4B12A;overflow:hidden"><div class="img-slot" style="font-size:11px">Foto</div></div>
-          <div style="font-family:'Fredoka',sans-serif;font-weight:600;font-size:21px;text-align:center;margin-top:16px">Isaac C. Santos</div>
-          <div style="font-family:'Press Start 2P',monospace;font-size:8px;line-height:1.5;color:#E23A2E;text-align:center;margin-top:9px" data-en="PROGRAMMING &amp; 3D">PROGRAMAÇÃO &amp; 3D</div>
-          <p style="font-size:13.5px;line-height:1.55;margin:14px 0 0;color:rgba(26,21,18,.72)" data-en="Systems Analysis &amp; Development grad. Software engineering, game dev, 3D modeling and web design.">Bacharel em Análise e Desenvolvimento de Sistemas. Engenharia de software, dev de jogos, modelagem 3D e web design.</p>
+        <div class="team-card">
+          <div class="team-avatar" style="--sh:#F4B12A"><div class="img-slot img-slot--sm">Foto</div></div>
+          <div class="team-name">Isaac C. Santos</div>
+          <div class="team-role" style="--fg:#E23A2E" data-en="PROGRAMMING &amp; 3D">PROGRAMAÇÃO &amp; 3D</div>
+          <p class="team-bio" data-en="Systems Analysis &amp; Development grad. Software engineering, game dev, 3D modeling and web design.">Bacharel em Análise e Desenvolvimento de Sistemas. Engenharia de software, dev de jogos, modelagem 3D e web design.</p>
         </div>
         <!-- Thiago -->
-        <div style="background:#fff;border:3px solid #1A1512;box-shadow:8px 8px 0 #1A1512;padding:22px 20px;display:flex;flex-direction:column">
-          <div style="position:relative;width:104px;height:104px;margin:0 auto;border:3px solid #1A1512;border-radius:50%;box-shadow:4px 4px 0 #2A3BC4;overflow:hidden"><div class="img-slot" style="font-size:11px">Foto</div></div>
-          <div style="font-family:'Fredoka',sans-serif;font-weight:600;font-size:21px;text-align:center;margin-top:16px">Thiago O. Rodrigues</div>
-          <div style="font-family:'Press Start 2P',monospace;font-size:8px;line-height:1.5;color:#2A3BC4;text-align:center;margin-top:9px" data-en="PROGRAMMING &amp; 3D ART">PROGRAMAÇÃO &amp; ARTE 3D</div>
-          <p style="font-size:13.5px;line-height:1.55;margin:14px 0 0;color:rgba(26,21,18,.72)" data-en="History (teaching) student. Programming, art and 3D modeling. Co-created the short &quot;Tupi Or Not Tupi&quot; (2016).">Estudante de Licenciatura em História. Programação, arte e modelagem 3D. Coautor do curta &quot;Tupi Or Not Tupi&quot; (2016).</p>
+        <div class="team-card">
+          <div class="team-avatar" style="--sh:#2A3BC4"><div class="img-slot img-slot--sm">Foto</div></div>
+          <div class="team-name">Thiago O. Rodrigues</div>
+          <div class="team-role" style="--fg:#2A3BC4" data-en="PROGRAMMING &amp; 3D ART">PROGRAMAÇÃO &amp; ARTE 3D</div>
+          <p class="team-bio" data-en="History (teaching) student. Programming, art and 3D modeling. Co-created the short &quot;Tupi Or Not Tupi&quot; (2016).">Estudante de Licenciatura em História. Programação, arte e modelagem 3D. Coautor do curta &quot;Tupi Or Not Tupi&quot; (2016).</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ============ CONTACT ============ -->
-  <section id="contact" style="background:#F6EDD9;padding:82px 24px;border-bottom:3px solid #1A1512">
-    <div style="max-width:760px;margin:0 auto;text-align:center">
-      <div style="display:inline-flex;align-items:center;gap:8px;font-family:'Press Start 2P',monospace;font-size:10px;color:#E23A2E;background:#fff;border:3px solid #1A1512;padding:8px 12px;box-shadow:4px 4px 0 #1A1512">✉ <span data-en="LET'S TALK">VAMOS CONVERSAR</span></div>
-      <h2 style="font-family:'Fredoka',sans-serif;font-weight:700;font-size:44px;line-height:1.05;margin:18px 0 0" data-en="Publisher, festival or fan? Say hi.">Publisher, festival ou fã? Diga olá.</h2>
-      <p style="font-size:17px;line-height:1.6;margin:14px auto 0;max-width:34em;color:rgba(26,21,18,.72)" data-en="Partnerships, press or joining the flock — drop us a message.">Parcerias, imprensa ou vontade de fazer parte do bando — mande uma mensagem.</p>
+  <section id="contact" class="section section-pad bg-cream">
+    <div class="contact-intro">
+      <div class="eyebrow" style="--fg:#E23A2E">✉ <span data-en="LET'S TALK">VAMOS CONVERSAR</span></div>
+      <h2 class="section-title" data-en="Publisher, festival or fan? Say hi.">Publisher, festival ou fã? Diga olá.</h2>
+      <p class="contact-lede" data-en="Partnerships, press or joining the flock — drop us a message.">Parcerias, imprensa ou vontade de fazer parte do bando — mande uma mensagem.</p>
     </div>
-    <div style="max-width:640px;margin:34px auto 0;background:#fff;border:3px solid #1A1512;box-shadow:12px 12px 0 #1A1512;padding:34px 34px 38px">
-      <form onsubmit="submitForm(event)">
-        <label style="display:block;font-family:'Press Start 2P',monospace;font-size:9px;margin-bottom:8px" data-en="NAME">NOME</label>
-        <input type="text" required data-en-ph="Your name" placeholder="Seu nome" style="width:100%;font-size:16px;padding:13px 14px;border:3px solid #1A1512;background:#F6EDD9;margin-bottom:18px">
-        <label style="display:block;font-family:'Press Start 2P',monospace;font-size:9px;margin-bottom:8px">E-MAIL</label>
-        <input type="email" required data-en-ph="you@email.com" placeholder="voce@email.com" style="width:100%;font-size:16px;padding:13px 14px;border:3px solid #1A1512;background:#F6EDD9;margin-bottom:18px">
-        <label style="display:block;font-family:'Press Start 2P',monospace;font-size:9px;margin-bottom:8px" data-en="MESSAGE">MENSAGEM</label>
-        <textarea rows="4" required data-en-ph="Tell us about it..." placeholder="Conte pra gente..." style="width:100%;font-size:16px;padding:13px 14px;border:3px solid #1A1512;background:#F6EDD9;margin-bottom:24px;resize:vertical"></textarea>
-        <button type="submit" class="pixel-btn-submit" style="--sc:#1A1512;width:100%;font-family:'Press Start 2P',monospace;font-size:12px;color:#F6EDD9;background:#E23A2E;border:3px solid #1A1512;padding:17px;cursor:pointer" data-en="SEND MESSAGE →">ENVIAR MENSAGEM →</button>
+    <div class="contact-card">
+      <form id="contactForm">
+        <label class="form-label" data-en="NAME">NOME</label>
+        <input class="form-field" type="text" required data-en-ph="Your name" placeholder="Seu nome">
+        <label class="form-label">E-MAIL</label>
+        <input class="form-field" type="email" required data-en-ph="you@email.com" placeholder="voce@email.com">
+        <label class="form-label" data-en="MESSAGE">MENSAGEM</label>
+        <textarea class="form-field" rows="4" required data-en-ph="Tell us about it..." placeholder="Conte pra gente..."></textarea>
+        <button type="submit" class="btn btn--submit" style="--sc:#1A1512" data-en="SEND MESSAGE →">ENVIAR MENSAGEM →</button>
       </form>
     </div>
   </section>
 
   <!-- ============ FOOTER ============ -->
-  <footer style="background:#1A1512;color:#F6EDD9;padding:52px 24px 40px">
-    <div style="max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;gap:30px;justify-content:space-between;align-items:flex-start">
-      <div style="max-width:320px">
-        <div style="display:inline-block;background:#C7BFB0;border:3px solid #1A1512;box-shadow:5px 5px 0 #F4B12A;padding:12px 16px"><img src="assets/mutum-logo.png" alt="Motion Mutum Estúdio" style="height:92px;width:auto;display:block"></div>
-        <p style="font-size:14px;line-height:1.6;margin:14px 0 0;color:rgba(246,237,217,.7)" data-en="Independent games &amp; animation studio. Made with care in Alagoas, Brazil.">Estúdio independente de jogos e animação. Feito com carinho em Alagoas, Brasil.</p>
+  <footer class="site-footer">
+    <div class="container footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo-chip"><img src="assets/mutum-logo.png" alt="Motion Mutum Estúdio" class="footer-logo-img"></div>
+        <p class="footer-tagline" data-en="Independent games &amp; animation studio. Made with care in Alagoas, Brazil.">Estúdio independente de jogos e animação. Feito com carinho em Alagoas, Brasil.</p>
       </div>
-      <div style="display:flex;gap:12px;flex-wrap:wrap">
-        <a class="social-link" href="#" style="--hc:#E23A2E;font-family:'Press Start 2P',monospace;font-size:9px;color:#F6EDD9;border:2px solid #F6EDD9;padding:10px 12px">INSTAGRAM</a>
-        <a class="social-link" href="#" style="--hc:#E23A2E;font-family:'Press Start 2P',monospace;font-size:9px;color:#F6EDD9;border:2px solid #F6EDD9;padding:10px 12px">YOUTUBE</a>
-        <a class="social-link" href="#" style="--hc:#2A3BC4;font-family:'Press Start 2P',monospace;font-size:9px;color:#F6EDD9;border:2px solid #F6EDD9;padding:10px 12px">ITCH.IO</a>
-        <a class="social-link" href="#" style="--hc:#2A3BC4;font-family:'Press Start 2P',monospace;font-size:9px;color:#F6EDD9;border:2px solid #F6EDD9;padding:10px 12px">DISCORD</a>
+      <div class="social-row">
+        <a class="social-link" href="#" style="--hc:#E23A2E">INSTAGRAM</a>
+        <a class="social-link" href="#" style="--hc:#E23A2E">YOUTUBE</a>
+        <a class="social-link" href="#" style="--hc:#2A3BC4">ITCH.IO</a>
+        <a class="social-link" href="#" style="--hc:#2A3BC4">DISCORD</a>
       </div>
     </div>
-    <div style="max-width:1200px;margin:34px auto 0;padding-top:22px;border-top:2px solid rgba(246,237,217,.2);display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;font-size:12px;color:rgba(246,237,217,.6)">
+    <div class="footer-bottom">
       <span>© 2026 Motion Mutum Estúdio</span>
       <span data-en="Made in Alagoas · Brazil ★">Feito em Alagoas · Brasil ★</span>
     </div>
@@ -273,55 +242,6 @@
 
 </div>
 
-<script>
-  var lang = 'pt';
-
-  function toggleLang() {
-    var root = document.getElementById('app');
-    var to = lang === 'en' ? 'pt' : 'en';
-    root.querySelectorAll('[data-en]').forEach(function (el) {
-      if (el.dataset.pt === undefined) el.dataset.pt = el.textContent;
-      el.textContent = to === 'en' ? el.dataset.en : el.dataset.pt;
-    });
-    root.querySelectorAll('[data-en-ph]').forEach(function (el) {
-      if (el.dataset.ptPh === undefined) el.dataset.ptPh = el.getAttribute('placeholder') || '';
-      el.setAttribute('placeholder', to === 'en' ? el.getAttribute('data-en-ph') : el.dataset.ptPh);
-    });
-    document.querySelectorAll('[data-langbtn]').forEach(function (el) { el.textContent = to === 'en' ? 'PT' : 'EN'; });
-    lang = to;
-  }
-
-  function toggleWishlist(e) {
-    var btn = e.currentTarget;
-    var en = lang === 'en';
-    var label = btn.querySelector('[data-wl]');
-    if (btn.dataset.on === '1') {
-      btn.dataset.on = '0';
-      btn.style.background = '#F4B12A';
-      if (label) label.textContent = en ? 'Add to wishlist' : 'Adicionar à wishlist';
-    } else {
-      btn.dataset.on = '1';
-      btn.style.background = '#7BC47F';
-      if (label) label.textContent = en ? '✓ On wishlist' : '✓ Na wishlist';
-    }
-  }
-
-  function submitForm(e) {
-    e.preventDefault();
-    var form = e.currentTarget;
-    var en = lang === 'en';
-    var box = document.createElement('div');
-    box.style.cssText = 'text-align:center;padding:34px 10px';
-    var t = document.createElement('div');
-    t.style.cssText = "font-family:'Press Start 2P',monospace;font-size:13px;color:#E23A2E;margin-bottom:14px";
-    t.textContent = en ? '✓ MESSAGE SENT' : '✓ MENSAGEM ENVIADA';
-    var s = document.createElement('div');
-    s.style.cssText = "font-family:'Fredoka',sans-serif;font-size:20px;color:#1A1512";
-    s.textContent = en ? "Thanks! We'll fly back to you soon. ★" : 'Valeu! A gente responde voando. ★';
-    box.appendChild(t);
-    box.appendChild(s);
-    form.replaceWith(box);
-  }
-</script>
+<script src="script.js"></script>
 </body>
 </html>

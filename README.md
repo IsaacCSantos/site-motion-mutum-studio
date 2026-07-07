@@ -5,20 +5,23 @@ Landing page estática do estúdio, publicada via GitHub Pages.
 ## Estrutura
 
 ```
-index.html      → a página do site (HTML + CSS + JS puros, sem build/framework)
+index.html      → estrutura HTML da página
+styles.css      → todo o CSS (variáveis de cor/fonte no topo, depois os componentes)
+script.js       → toda a lógica (troca PT/EN, menu mobile, wishlist, formulário)
 assets/         → imagens usadas pelo site (logo, ave, etc.)
-source/         → arquivos originais exportados da ferramenta de design usada para
-                  prototipar o layout (Motion Mutum - Landing.dc.html e afins).
-                  Não são usados pelo site publicado — servem só de referência/histórico.
 .nojekyll       → avisa ao GitHub Pages para não rodar o processamento Jekyll
 ```
 
 ## Como atualizar o site
 
-1. Edite `index.html` diretamente (ou os arquivos em `assets/`).
+1. Edite `index.html` (conteúdo/estrutura), `styles.css` (visual) ou `script.js`
+   (comportamento), conforme o caso.
    - Textos em português ficam no conteúdo visível de cada elemento; a versão em
      inglês fica no atributo `data-en="..."` do mesmo elemento (usado pelo botão
      PT/EN no menu).
+   - As cores e fontes da marca ficam centralizadas no topo de `styles.css`,
+     no bloco `:root { --ink: ...; --red: ...; ... }` — mudar uma cor ali reflete
+     em todos os componentes que a usam.
    - Os blocos cinza tracejados ("Screenshot 01", "Foto do estúdio", etc.) são
      placeholders de imagem — quando tiver a arte/foto final, troque a `<div class="img-slot">...</div>`
      correspondente por uma tag `<img src="assets/nome-do-arquivo.png" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">`
