@@ -65,4 +65,17 @@ document.addEventListener('DOMContentLoaded', function () {
     box.appendChild(s);
     contactForm.replaceWith(box);
   });
+
+  // one-at-a-time auto-advancing carousels (screenshots, shorts, team) — only
+  // visually active on mobile widths, where the CSS turns these grids into
+  // horizontal scroll-snap strips.
+  document.querySelectorAll('.shot-grid, .team-grid').forEach(function (track) {
+    setInterval(function () {
+      var count = track.children.length;
+      if (!count || track.clientWidth === 0) return;
+      var current = Math.round(track.scrollLeft / track.clientWidth);
+      var next = (current + 1) % count;
+      track.scrollTo({ left: next * track.clientWidth, behavior: 'smooth' });
+    }, 3500);
+  });
 });
