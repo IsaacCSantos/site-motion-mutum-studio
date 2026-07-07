@@ -66,10 +66,10 @@ document.addEventListener('DOMContentLoaded', function () {
     contactForm.replaceWith(box);
   });
 
-  // one-at-a-time auto-advancing carousels (screenshots, shorts, team) — only
-  // visually active on mobile widths, where the CSS turns these grids into
-  // horizontal scroll-snap strips.
-  document.querySelectorAll('.shot-grid, .team-grid').forEach(function (track) {
+  // one-at-a-time auto-advancing carousels: screenshots/shorts/team (mobile
+  // only, where the CSS turns those grids into horizontal scroll-snap strips)
+  // and the studio meeting-photos carousel (always on).
+  document.querySelectorAll('[data-carousel]').forEach(function (track) {
     setInterval(function () {
       var count = track.children.length;
       if (!count || track.clientWidth === 0) return;
