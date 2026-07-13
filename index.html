@@ -23,16 +23,24 @@
         <span class="brand-name">MOTION<br>MUTUM</span>
       </a>
       <div class="header-actions">
-        <button class="btn btn--sm" data-langbtn style="--sc:#1A1512">EN</button>
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button class="lang-btn is-active" data-lang="pt">PT</button>
+          <button class="lang-btn" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="es">ES</button>
+        </div>
         <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
       </div>
       <nav class="nav-links" id="navLinks">
-        <a class="nav-link" data-en="Games" href="#games">Jogos</a>
-        <a class="nav-link" data-en="Animation" href="#anim">Animação</a>
-        <a class="nav-link" data-en="Studio" href="#studio">Estúdio</a>
-        <a class="nav-link" data-en="Team" href="#team">Equipe</a>
-        <a class="nav-link" data-en="Contact" href="#contact">Contato</a>
-        <button class="btn btn--sm" data-langbtn style="--sc:#1A1512">EN</button>
+        <a class="nav-link" data-en="Games" data-es="Juegos" href="#games">Jogos</a>
+        <a class="nav-link" data-en="Animation" data-es="Animación" href="#anim">Animação</a>
+        <a class="nav-link" data-en="Studio" data-es="Estudio" href="#studio">Estúdio</a>
+        <a class="nav-link" data-en="Team" data-es="Equipo" href="#team">Equipe</a>
+        <a class="nav-link" data-en="Contact" data-es="Contacto" href="#contact">Contato</a>
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button class="lang-btn is-active" data-lang="pt">PT</button>
+          <button class="lang-btn" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="es">ES</button>
+        </div>
       </nav>
     </div>
   </header>
@@ -47,12 +55,12 @@
 
     <div class="container hero-grid">
       <div class="hero-copy">
-        <div class="eyebrow" style="--fg:#1A1512;--bg:#F4B12A;--sh:#E23A2E">★ <span data-en="From Alagoas to the world">De Alagoas para o mundo</span></div>
-        <h1 class="hero-title"><span data-en="We make games &amp; shorts">Fazemos jogos e curtas</span> <span style="color:var(--gold)" data-en="with a Brazilian soul.">com alma brasileira.</span></h1>
-        <p class="hero-lede" data-en="Motion Mutum is an independent studio born in Alagoas, blending digital art, folklore and a lot of love for every single frame.">A Motion Mutum é um estúdio independente que nasce em Alagoas, misturando arte digital, folclore e muito carinho por cada quadro.</p>
+        <div class="eyebrow" style="--fg:#1A1512;--bg:#F4B12A;--sh:#E23A2E">★ <span data-en="From Alagoas to the world" data-es="Desde Alagoas para el mundo">De Alagoas para o mundo</span></div>
+        <h1 class="hero-title"><span data-en="We make games &amp; shorts" data-es="Hacemos juegos y cortos">Fazemos jogos e curtas</span> <span style="color:var(--gold)" data-en="with a Brazilian soul." data-es="con alma brasileña.">com alma brasileira.</span></h1>
+        <p class="hero-lede" data-en="Motion Mutum is an independent studio born in Alagoas, blending digital art, folklore and a lot of love for every single frame." data-es="Motion Mutum es un estudio independiente nacido en Alagoas, que mezcla arte digital, folclore y mucho cariño por cada cuadro.">A Motion Mutum é um estúdio independente que nasce em Alagoas, misturando arte digital, folclore e muito carinho por cada quadro.</p>
         <div class="hero-ctas">
-          <a class="btn btn--lg btn--fill" href="#anim" style="--sc:#E23A2E"><span class="btn-icon">▶</span><span data-en="Watch showreel">Ver showreel</span></a>
-          <a class="btn btn--lg btn--outline" href="#games" style="--sc:#2A3BC4"><span data-en="Meet EVOLUA!">Conheça EVOLUA!</span><span>→</span></a>
+          <a class="btn btn--lg btn--fill" href="#anim" style="--sc:#E23A2E"><span class="btn-icon">▶</span><span data-en="Watch showreel" data-es="Ver showreel">Ver showreel</span></a>
+          <a class="btn btn--lg btn--outline" href="#games" style="--sc:#2A3BC4"><span data-en="Meet EVOLUA!" data-es="Conoce EVOLUA!">Conheça EVOLUA!</span><span>→</span></a>
         </div>
       </div>
       <div class="hero-figure">
@@ -69,10 +77,10 @@
     <div class="container">
       <div class="section-head">
         <div>
-          <div class="eyebrow" style="--fg:#E23A2E">● <span data-en="IN DEVELOPMENT">EM DESENVOLVIMENTO</span></div>
-          <h2 class="section-title" data-en="Our games">Nossos jogos</h2>
+          <div class="eyebrow" style="--fg:#E23A2E">● <span data-en="IN DEVELOPMENT" data-es="EN DESARROLLO">EM DESENVOLVIMENTO</span></div>
+          <h2 class="section-title" data-en="Our games" data-es="Nuestros juegos">Nossos jogos</h2>
         </div>
-        <p class="games-summary" data-en="Handcrafted digital-art worlds — one project at a time, made to last.">Mundos em arte digital feitos à mão — um projeto de cada vez, feito para durar.</p>
+        <p class="games-summary" data-en="Handcrafted digital-art worlds — one project at a time, made to last." data-es="Mundos en arte digital hechos a mano — un proyecto a la vez, hechos para durar.">Mundos em arte digital feitos à mão — um projeto de cada vez, feito para durar.</p>
       </div>
 
       <!-- feature card -->
@@ -83,15 +91,15 @@
         <div class="feature-copy">
           <div class="tag-row">
             <span class="tag" style="--bg:#F4B12A">ARTE DIGITAL</span>
-            <span class="tag" style="--bg:#E23A2E;--fg:#F6EDD9" data-en="RUNNING / PLATFORMER">RUNNING / PLATAFORMA</span>
+            <span class="tag" style="--bg:#E23A2E;--fg:#F6EDD9" data-en="RUNNING / PLATFORMER" data-es="RUNNING / PLATAFORMA">RUNNING / PLATAFORMA</span>
             <span class="tag" style="--fg:#F6EDD9;--bd:#F6EDD9">PC / MOBILE</span>
           </div>
           <h3 class="evolua-title">EVOLUA!</h3>
-          <p class="evolua-lede" data-en="A running/platformer set in the Cretaceous. You play an ancestral bird — parent of all living birds — able to morph into other birds depending on the seed it eats, joined by a shape-shifting prehistoric mammal. Cross biomes, dodge beasts and obstacles, and find your way back to the nest.">Um running/plataforma ambientado no Cretáceo. Você controla uma ave ancestral — mãe de todas as aves atuais — capaz de assumir a forma de outras aves conforme a semente que come, ao lado de um pequeno mamífero pré-histórico metamórfico. Atravesse biomas, escape de feras e obstáculos e volte ao ninho.</p>
-          <p class="evolua-sublede" data-en="A playful, educational take on evolution by natural selection — with creatures inspired by Brazilian species, prehistoric and modern.">Uma visão lúdica e educativa da evolução por seleção natural — com criaturas inspiradas em espécies brasileiras, pré-históricas e atuais.</p>
+          <p class="evolua-lede" data-en="A running/platformer set in the Cretaceous. You play an ancestral bird — parent of all living birds — able to morph into other birds depending on the seed it eats, joined by a shape-shifting prehistoric mammal. Cross biomes, dodge beasts and obstacles, and find your way back to the nest." data-es="Un running/plataforma ambientado en el Cretácico. Controlas un ave ancestral — madre de todas las aves actuales — capaz de transformarse en otras aves según la semilla que come, junto a un pequeño mamífero prehistórico metamórfico. Atraviesa biomas, esquiva bestias y obstáculos, y vuelve al nido.">Um running/plataforma ambientado no Cretáceo. Você controla uma ave ancestral — mãe de todas as aves atuais — capaz de assumir a forma de outras aves conforme a semente que come, ao lado de um pequeno mamífero pré-histórico metamórfico. Atravesse biomas, escape de feras e obstáculos e volte ao ninho.</p>
+          <p class="evolua-sublede" data-en="A playful, educational take on evolution by natural selection — with creatures inspired by Brazilian species, prehistoric and modern." data-es="Una visión lúdica y educativa de la evolución por selección natural — con criaturas inspiradas en especies brasileñas, prehistóricas y actuales.">Uma visão lúdica e educativa da evolução por seleção natural — com criaturas inspiradas em espécies brasileiras, pré-históricas e atuais.</p>
           <div class="evolua-ctas">
-            <button class="btn btn--fill" id="wishlistBtn" data-on="0" style="--sc:#1A1512">★ <span data-wl data-en="Add to wishlist">Adicionar à wishlist</span></button>
-            <a class="btn btn--outline" href="#anim" style="--sc:rgba(0,0,0,.35)"><span class="btn-icon">▶</span><span data-en="Watch trailer">Ver trailer</span></a>
+            <button class="btn btn--fill" id="wishlistBtn" data-on="0" style="--sc:#1A1512">★ <span data-wl data-en="Add to wishlist" data-es="Añadir a la lista de deseos">Adicionar à wishlist</span></button>
+            <a class="btn btn--outline" href="#anim" style="--sc:rgba(0,0,0,.35)"><span class="btn-icon">▶</span><span data-en="Watch trailer" data-es="Ver trailer">Ver trailer</span></a>
           </div>
         </div>
       </div>
@@ -109,8 +117,8 @@
   <section id="anim" class="section section-pad bg-cream-alt">
     <div class="container">
       <div style="text-align:center">
-        <div class="eyebrow" style="--fg:#2A3BC4">▶ <span data-en="ANIMATED SHORTS">CURTAS DE ANIMAÇÃO</span></div>
-        <h2 class="section-title" style="margin:18px auto 0;max-width:16em" data-en="Frame by frame, from Alagoas">Quadro a quadro, direto de Alagoas</h2>
+        <div class="eyebrow" style="--fg:#2A3BC4">▶ <span data-en="ANIMATED SHORTS" data-es="CORTOS DE ANIMACIÓN">CURTAS DE ANIMAÇÃO</span></div>
+        <h2 class="section-title" style="margin:18px auto 0;max-width:16em" data-en="Frame by frame, from Alagoas" data-es="Cuadro a cuadro, directo desde Alagoas">Quadro a quadro, direto de Alagoas</h2>
       </div>
 
       <!-- showreel -->
@@ -119,22 +127,22 @@
         <div class="showreel-overlay">
           <div class="play-btn">▶</div>
         </div>
-        <div class="showreel-caption" data-en="SHOWREEL 2026 · 02:14">SHOWREEL 2026 · 02:14</div>
+        <div class="showreel-caption" data-en="SHOWREEL 2026 · 02:14" data-es="SHOWREEL 2026 · 02:14">SHOWREEL 2026 · 02:14</div>
       </div>
 
       <!-- shorts grid -->
       <div class="shot-grid" data-carousel style="margin-top:26px">
         <div class="short-card">
           <div class="short-media"><div class="img-slot">Curta 01</div></div>
-          <div class="short-body"><div class="short-title" data-en="The Curassow's Song">O Canto do Mutum</div><div class="short-status" style="--fg:#E23A2E" data-en="SHORT · COMING SOON">CURTA · EM BREVE</div></div>
+          <div class="short-body"><div class="short-title" data-en="The Curassow's Song" data-es="El Canto del Mutum">O Canto do Mutum</div><div class="short-status" style="--fg:#E23A2E" data-en="SHORT · COMING SOON" data-es="CORTO · PRÓXIMAMENTE">CURTA · EM BREVE</div></div>
         </div>
         <div class="short-card">
           <div class="short-media"><div class="img-slot">Curta 02</div></div>
-          <div class="short-body"><div class="short-title" data-en="Backwater Tales">Causos do Sertão</div><div class="short-status" style="--fg:#2A3BC4" data-en="SHORT · COMING SOON">CURTA · EM BREVE</div></div>
+          <div class="short-body"><div class="short-title" data-en="Backwater Tales" data-es="Cuentos del Sertão">Causos do Sertão</div><div class="short-status" style="--fg:#2A3BC4" data-en="SHORT · COMING SOON" data-es="CORTO · PRÓXIMAMENTE">CURTA · EM BREVE</div></div>
         </div>
         <div class="short-card">
           <div class="short-media"><div class="img-slot">Curta 03</div></div>
-          <div class="short-body"><div class="short-title" data-en="Lantern Moon">Lua de Mamulengo</div><div class="short-status short-status--outline" style="--fg:#F4B12A" data-en="SHORT · COMING SOON">CURTA · EM BREVE</div></div>
+          <div class="short-body"><div class="short-title" data-en="Lantern Moon" data-es="Luna de Mamulengo">Lua de Mamulengo</div><div class="short-status short-status--outline" style="--fg:#F4B12A" data-en="SHORT · COMING SOON" data-es="CORTO · PRÓXIMAMENTE">CURTA · EM BREVE</div></div>
         </div>
       </div>
     </div>
@@ -144,15 +152,15 @@
   <section id="studio" class="section section-pad bg-ink">
     <div class="container studio-grid">
       <div>
-        <div class="eyebrow" style="--fg:#1A1512;--bg:#F4B12A;--bd:#F6EDD9;--sh:#E23A2E">★ <span data-en="THE STUDIO">O ESTÚDIO</span></div>
-        <h2 class="section-title" style="color:var(--cream)" data-en="Why a curassow?">Por que um mutum?</h2>
-        <p class="studio-copy" style="margin-top:20px" data-en="The Alagoas Curassow is one of the rarest birds in the world — a symbol of resilience and of our home state. Its colors echo the Alagoas flag: red, white and blue.">O mutum-de-alagoas é uma das aves mais raras do mundo — símbolo de resistência e do nosso estado natal. Suas cores ecoam a bandeira de Alagoas: vermelho, branco e azul.</p>
-        <p class="studio-copy" data-en="We're a small, independent team making games and animation with regional roots and a whole lot of care. Slow, handmade, ours.">Somos um time pequeno e independente, fazendo jogos e animação com raiz regional e muito cuidado. Devagar, feito à mão, nosso.</p>
-        <p class="studio-note" data-en="An initiative supported by the City of Coruripe and its Culture Secretariat — which hosts our space. In return we run talks, workshops and the Municipal Library Film Club.">Iniciativa com apoio da Prefeitura de Coruripe e da Secretaria Municipal de Cultura — que cede nosso espaço. Como contrapartida, realizamos palestras, workshops e o Cineclube da Biblioteca Municipal.</p>
+        <div class="eyebrow" style="--fg:#1A1512;--bg:#F4B12A;--bd:#F6EDD9;--sh:#E23A2E">★ <span data-en="THE STUDIO" data-es="EL ESTUDIO">O ESTÚDIO</span></div>
+        <h2 class="section-title" style="color:var(--cream)" data-en="Why a curassow?" data-es="¿Por qué un mutum?">Por que um mutum?</h2>
+        <p class="studio-copy" style="margin-top:20px" data-en="The Alagoas Curassow is one of the rarest birds in the world — a symbol of resilience and of our home state. Its colors echo the Alagoas flag: red, white and blue." data-es="El mutum de Alagoas es una de las aves más raras del mundo — símbolo de resistencia y de nuestro estado natal. Sus colores recuerdan la bandera de Alagoas: rojo, blanco y azul.">O mutum-de-alagoas é uma das aves mais raras do mundo — símbolo de resistência e do nosso estado natal. Suas cores ecoam a bandeira de Alagoas: vermelho, branco e azul.</p>
+        <p class="studio-copy" data-en="We're a small, independent team making games and animation with regional roots and a whole lot of care. Slow, handmade, ours." data-es="Somos un equipo pequeño e independiente, haciendo juegos y animación con raíces regionales y mucho cuidado. Despacio, hecho a mano, nuestro.">Somos um time pequeno e independente, fazendo jogos e animação com raiz regional e muito cuidado. Devagar, feito à mão, nosso.</p>
+        <p class="studio-note" data-en="An initiative supported by the City of Coruripe and its Culture Secretariat — which hosts our space. In return we run talks, workshops and the Municipal Library Film Club." data-es="Una iniciativa con el apoyo del Ayuntamiento de Coruripe y su Secretaría de Cultura — que cede nuestro espacio. Como contrapartida, realizamos charlas, talleres y el Cineclub de la Biblioteca Municipal.">Iniciativa com apoio da Prefeitura de Coruripe e da Secretaria Municipal de Cultura — que cede nosso espaço. Como contrapartida, realizamos palestras, workshops e o Cineclube da Biblioteca Municipal.</p>
         <div class="studio-tags">
-          <div class="pill" style="--bd:#E23A2E" data-en="INDEPENDENT">INDEPENDENTE</div>
-          <div class="pill" data-en="HANDMADE">FEITO À MÃO</div>
-          <div class="pill" style="--bd:#2A3BC4" data-en="MADE IN ALAGOAS">DE ALAGOAS</div>
+          <div class="pill" style="--bd:#E23A2E" data-en="INDEPENDENT" data-es="INDEPENDIENTE">INDEPENDENTE</div>
+          <div class="pill" data-en="HANDMADE" data-es="HECHO A MANO">FEITO À MÃO</div>
+          <div class="pill" style="--bd:#2A3BC4" data-en="MADE IN ALAGOAS" data-es="DE ALAGOAS">DE ALAGOAS</div>
         </div>
       </div>
       <div class="studio-photo carousel-track" data-carousel>
@@ -160,6 +168,9 @@
         <img src="assets/studio-meeting-2.jpg" alt="Equipe da Motion Mutum reunida trabalhando em notebooks">
         <img src="assets/studio-meeting-3.jpg" alt="Equipe da Motion Mutum reunida trabalhando em notebooks">
         <img src="assets/studio-meeting-4.jpg" alt="Equipe da Motion Mutum reunida trabalhando em notebooks">
+        <img src="assets/studio-meeting-5.jpg" alt="Storyboard do curta projetado na sala de exibição da Motion Mutum">
+        <img src="assets/studio-meeting-6.jpg" alt="Storyboard do curta projetado na sala de exibição da Motion Mutum">
+        <img src="assets/studio-meeting-7.jpg" alt="Equipe da Motion Mutum reunida em frente ao logo do estúdio projetado">
       </div>
     </div>
   </section>
@@ -168,9 +179,9 @@
   <section id="team" class="section section-pad bg-cream-alt">
     <div class="container">
       <div style="text-align:center">
-        <div class="eyebrow" style="--fg:#F4B12A;--bg:#1A1512;--sh:#E23A2E">★ <span data-en="THE FLOCK">O BANDO</span></div>
-        <h2 class="section-title" style="margin:18px auto 0;max-width:15em" data-en="Four founders, one nest">Quatro fundadores, um ninho</h2>
-        <p class="team-lede" data-en="Art, science, code and story — the mix behind Motion Mutum.">Arte, ciência, código e narrativa — a mistura por trás da Motion Mutum.</p>
+        <div class="eyebrow" style="--fg:#F4B12A;--bg:#1A1512;--sh:#E23A2E">★ <span data-en="THE FLOCK" data-es="LA BANDADA">O BANDO</span></div>
+        <h2 class="section-title" style="margin:18px auto 0;max-width:15em" data-en="Four founders, one nest" data-es="Cuatro fundadores, un nido">Quatro fundadores, um ninho</h2>
+        <p class="team-lede" data-en="Art, science, code and story — the mix behind Motion Mutum." data-es="Arte, ciencia, código e historia — la mezcla detrás de Motion Mutum.">Arte, ciência, código e narrativa — a mistura por trás da Motion Mutum.</p>
       </div>
 
       <div class="team-grid" data-carousel>
@@ -178,29 +189,29 @@
         <div class="team-card">
           <div class="team-avatar" style="--sh:#E23A2E"><img class="team-photo" src="assets/cassio-januario.png" alt="Cássio Januário"></div>
           <div class="team-name">Cássio Januário</div>
-          <div class="team-role" style="--fg:#E23A2E" data-en="ART &amp; ILLUSTRATION">ARTE &amp; ILUSTRAÇÃO</div>
-          <p class="team-bio" data-en="Systems Analysis grad. Painting, printmaking and digital art. Co-created the stop-motion short &quot;Tupi Or Not Tupi&quot; (2016).">Bacharel em Análise de Sistemas. Pintura, gravura e arte digital. Coautor do curta em stop motion &quot;Tupi Or Not Tupi&quot; (2016).</p>
+          <div class="team-role" style="--fg:#E23A2E" data-en="GAME ARTIST &amp; ANIMATION" data-es="GAME ARTIST &amp; ANIMACIÓN">GAME ARTIST &amp; ANIMAÇÃO</div>
+          <p class="team-bio" data-en="Game Artist and animator on EVOLUA! — art, illustration and animation for the game. Systems Analysis grad; painting, printmaking and digital art; co-created the stop-motion short &quot;Tupi Or Not Tupi&quot; (2016)." data-es="Game Artist y animador en EVOLUA! — arte, ilustración y animación del juego. Graduado en Análisis de Sistemas; pintura, grabado y arte digital; coautor del corto en stop motion &quot;Tupi Or Not Tupi&quot; (2016).">Game Artist e animador do EVOLUA! — arte, ilustração e animação do jogo. Bacharel em Análise de Sistemas; pintura, gravura e arte digital; coautor do curta em stop motion &quot;Tupi Or Not Tupi&quot; (2016).</p>
         </div>
         <!-- Erivelto -->
         <div class="team-card">
           <div class="team-avatar" style="--sh:#2A3BC4"><img class="team-photo" src="assets/erivelto-souza.png" alt="Erivelto Souza"></div>
           <div class="team-name">Erivelto Souza</div>
-          <div class="team-role" style="--fg:#2A3BC4" data-en="WRITING &amp; SCIENCE ART">ROTEIRO &amp; ARTE CIENTÍFICA</div>
-          <p class="team-bio" data-en="Biologist (herpetology, ornithology, paleontology). Writer and poet; 2D animation, stop motion and museum sculpture.">Biólogo (herpetologia, ornitologia, paleontologia). Roteirista e poeta; animação 2D, stop motion e escultura para museus.</p>
+          <div class="team-role" style="--fg:#2A3BC4" data-en="LEAD ARTIST" data-es="LEAD ARTIST">LEAD ARTIST</div>
+          <p class="team-bio" data-en="Lead Artist, writer, game designer, animator and concept artist on EVOLUA!. Biologist (herpetology, ornithology, paleontology) and poet; also sculpts for museums (UFAL History Museum, Atlantic Forest Museum)." data-es="Lead Artist, guionista, game designer, animador y artista conceptual en EVOLUA!. Biólogo (herpetología, ornitología, paleontología) y poeta; también esculpe para museos (Museo de Historia UFAL, Museo de la Mata Atlántica).">Lead Artist, roteirista, game designer, animador e artista conceitual do EVOLUA!. Biólogo (herpetologia, ornitologia, paleontologia) e poeta; também esculpe para museus (Museu de História UFAL, Museu da Mata Atlântica).</p>
         </div>
         <!-- Isaac -->
         <div class="team-card">
           <div class="team-avatar" style="--sh:#F4B12A"><img class="team-photo" src="assets/isaac-santos.jpg" alt="Isaac C. Santos"></div>
           <div class="team-name">Isaac C. Santos</div>
-          <div class="team-role" style="--fg:#E23A2E" data-en="PROGRAMMING &amp; 3D">PROGRAMAÇÃO &amp; 3D</div>
-          <p class="team-bio" data-en="Systems Analysis &amp; Development grad. Software engineering, game dev, 3D modeling and web design.">Bacharel em Análise e Desenvolvimento de Sistemas. Engenharia de software, dev de jogos, modelagem 3D e web design.</p>
+          <div class="team-role" style="--fg:#E23A2E" data-en="PROGRAMMING" data-es="PROGRAMACIÓN">PROGRAMAÇÃO</div>
+          <p class="team-bio" data-en="Programmer on EVOLUA!. Systems Analysis &amp; Development grad; software engineering, 3D modeling and web design." data-es="Programador en EVOLUA!. Graduado en Análisis y Desarrollo de Sistemas; ingeniería de software, modelado 3D y diseño web.">Programador do EVOLUA!. Bacharel em Análise e Desenvolvimento de Sistemas; engenharia de software, modelagem 3D e web design.</p>
         </div>
         <!-- Thiago -->
         <div class="team-card">
           <div class="team-avatar" style="--sh:#2A3BC4"><img class="team-photo" src="assets/thiago-rodrigues.jpg" alt="Thiago O. Rodrigues"></div>
           <div class="team-name">Thiago O. Rodrigues</div>
-          <div class="team-role" style="--fg:#2A3BC4" data-en="PROGRAMMING &amp; 3D ART">PROGRAMAÇÃO &amp; ARTE 3D</div>
-          <p class="team-bio" data-en="History (teaching) student. Programming, art and 3D modeling. Co-created the short &quot;Tupi Or Not Tupi&quot; (2016).">Estudante de Licenciatura em História. Programação, arte e modelagem 3D. Coautor do curta &quot;Tupi Or Not Tupi&quot; (2016).</p>
+          <div class="team-role" style="--fg:#2A3BC4" data-en="GAME DESIGN &amp; PRODUCTION" data-es="GAME DESIGN &amp; PRODUCCIÓN">GAME DESIGN &amp; PRODUÇÃO</div>
+          <p class="team-bio" data-en="Game Designer, Producer and QA Tester on EVOLUA! — also handles marketing and community management. History (teaching) student; co-created the short &quot;Tupi Or Not Tupi&quot; (2016)." data-es="Game Designer, Producer y QA Tester en EVOLUA! — también se encarga de marketing y community management. Estudiante de Profesorado en Historia; coautor del corto &quot;Tupi Or Not Tupi&quot; (2016).">Game Designer, Producer e QA Tester do EVOLUA! — também cuida de marketing e community management. Estudante de Licenciatura em História; coautor do curta &quot;Tupi Or Not Tupi&quot; (2016).</p>
         </div>
       </div>
     </div>
@@ -209,20 +220,31 @@
   <!-- ============ CONTACT ============ -->
   <section id="contact" class="section section-pad bg-cream">
     <div class="contact-intro">
-      <div class="eyebrow" style="--fg:#E23A2E">✉ <span data-en="LET'S TALK">VAMOS CONVERSAR</span></div>
-      <h2 class="section-title" data-en="Publisher, festival or fan? Say hi.">Publisher, festival ou fã? Diga olá.</h2>
-      <p class="contact-lede" data-en="Partnerships, press or joining the flock — drop us a message.">Parcerias, imprensa ou vontade de fazer parte do bando — mande uma mensagem.</p>
+      <div class="eyebrow" style="--fg:#E23A2E">✉ <span data-en="LET'S TALK" data-es="HABLEMOS">VAMOS CONVERSAR</span></div>
+      <h2 class="section-title" data-en="Publisher, festival or fan? Say hi." data-es="¿Publisher, festival o fan? Salúdanos.">Publisher, festival ou fã? Diga olá.</h2>
+      <p class="contact-lede" data-en="Partnerships, press or joining the flock — find us wherever you scroll." data-es="Alianzas, prensa o ganas de unirte a la bandada — encuéntranos donde sea que estés.">Parcerias, imprensa ou vontade de fazer parte do bando — nos encontre por aí.</p>
     </div>
-    <div class="contact-card">
-      <form id="contactForm">
-        <label class="form-label" data-en="NAME">NOME</label>
-        <input class="form-field" type="text" required data-en-ph="Your name" placeholder="Seu nome">
-        <label class="form-label">E-MAIL</label>
-        <input class="form-field" type="email" required data-en-ph="you@email.com" placeholder="voce@email.com">
-        <label class="form-label" data-en="MESSAGE">MENSAGEM</label>
-        <textarea class="form-field" rows="4" required data-en-ph="Tell us about it..." placeholder="Conte pra gente..."></textarea>
-        <button type="submit" class="btn btn--submit" style="--sc:#1A1512" data-en="SEND MESSAGE →">ENVIAR MENSAGEM →</button>
-      </form>
+    <div class="social-spotlight">
+      <a class="social-card" href="https://www.instagram.com/motionmutum/" target="_blank" rel="noopener" style="--fg:#F6EDD9;background:linear-gradient(45deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5)">
+        <span class="social-card-icon">◆</span>
+        <span class="social-card-label">INSTAGRAM</span>
+      </a>
+      <a class="social-card" href="https://www.youtube.com/@motionmutum" target="_blank" rel="noopener" style="--bg:#E23A2E;--fg:#F6EDD9">
+        <span class="social-card-icon">▶</span>
+        <span class="social-card-label">YOUTUBE</span>
+      </a>
+      <a class="social-card" href="https://motionmutum.itch.io/" target="_blank" rel="noopener" style="--bg:#2A3BC4;--fg:#F6EDD9">
+        <span class="social-card-icon">●</span>
+        <span class="social-card-label">ITCH.IO</span>
+      </a>
+      <a class="social-card social-card--outline" href="#" style="--bd:#2A3BC4;--fg:#2A3BC4">
+        <span class="social-card-icon">■</span>
+        <span class="social-card-label">DISCORD</span>
+      </a>
+      <a class="social-card" href="mailto:motionmutum@gmail.com" style="--bg:#F4B12A;--fg:#1A1512">
+        <span class="social-card-icon">✉</span>
+        <span class="social-card-label">EMAIL</span>
+      </a>
     </div>
   </section>
 
@@ -231,18 +253,19 @@
     <div class="container footer-top">
       <div class="footer-brand">
         <div class="footer-logo-chip"><img src="assets/mutum-logo.png" alt="Motion Mutum Estúdio" class="footer-logo-img"></div>
-        <p class="footer-tagline" data-en="Independent games &amp; animation studio. Made with care in Alagoas, Brazil.">Estúdio independente de jogos e animação. Feito com carinho em Alagoas, Brasil.</p>
+        <p class="footer-tagline" data-en="Independent games &amp; animation studio. Made with care in Alagoas, Brazil." data-es="Estudio independiente de juegos y animación. Hecho con cariño en Alagoas, Brasil.">Estúdio independente de jogos e animação. Feito com carinho em Alagoas, Brasil.</p>
       </div>
       <div class="social-row">
-        <a class="social-link" href="#" style="--hc:#E23A2E">INSTAGRAM</a>
-        <a class="social-link" href="#" style="--hc:#E23A2E">YOUTUBE</a>
-        <a class="social-link" href="#" style="--hc:#2A3BC4">ITCH.IO</a>
+        <a class="social-link" href="https://www.instagram.com/motionmutum/" target="_blank" rel="noopener" style="--hc:#D62976">INSTAGRAM</a>
+        <a class="social-link" href="https://www.youtube.com/@motionmutum" target="_blank" rel="noopener" style="--hc:#E23A2E">YOUTUBE</a>
+        <a class="social-link" href="https://motionmutum.itch.io/" target="_blank" rel="noopener" style="--hc:#2A3BC4">ITCH.IO</a>
         <a class="social-link" href="#" style="--hc:#2A3BC4">DISCORD</a>
+        <a class="social-link" href="mailto:motionmutum@gmail.com" style="--hc:#F4B12A">EMAIL</a>
       </div>
     </div>
     <div class="footer-bottom">
       <span>© 2026 Motion Mutum Estúdio</span>
-      <span data-en="Made in Alagoas · Brazil ★">Feito em Alagoas · Brasil ★</span>
+      <span data-en="Made in Alagoas · Brazil ★" data-es="Hecho en Alagoas · Brasil ★">Feito em Alagoas · Brasil ★</span>
     </div>
   </footer>
 

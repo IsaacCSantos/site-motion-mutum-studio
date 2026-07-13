@@ -7,7 +7,7 @@ Landing page estática do estúdio, publicada via GitHub Pages.
 ```
 index.html      → estrutura HTML da página
 styles.css      → todo o CSS (variáveis de cor/fonte no topo, depois os componentes)
-script.js       → toda a lógica (troca PT/EN, menu mobile, wishlist, formulário)
+script.js       → toda a lógica (troca PT/EN/ES, menu mobile, wishlist)
 assets/         → imagens usadas pelo site (logo, ave, etc.)
 .nojekyll       → avisa ao GitHub Pages para não rodar o processamento Jekyll
 ```
@@ -16,9 +16,10 @@ assets/         → imagens usadas pelo site (logo, ave, etc.)
 
 1. Edite `index.html` (conteúdo/estrutura), `styles.css` (visual) ou `script.js`
    (comportamento), conforme o caso.
-   - Textos em português ficam no conteúdo visível de cada elemento; a versão em
-     inglês fica no atributo `data-en="..."` do mesmo elemento (usado pelo botão
-     PT/EN no menu).
+   - Textos em português ficam no conteúdo visível de cada elemento; as versões em
+     inglês e espanhol ficam nos atributos `data-en="..."` e `data-es="..."` do
+     mesmo elemento (usados pelo seletor PT/EN/ES no menu) — ao adicionar um texto
+     novo, inclua os três.
    - As cores e fontes da marca ficam centralizadas no topo de `styles.css`,
      no bloco `:root { --ink: ...; --red: ...; ... }` — mudar uma cor ali reflete
      em todos os componentes que a usam.
@@ -39,11 +40,10 @@ assets/         → imagens usadas pelo site (logo, ave, etc.)
    ```
 4. O GitHub Pages publica automaticamente a nova versão em ~1 minuto após o push.
 
-## Sobre o formulário de contato
+## Sobre a seção de contato
 
-O formulário da seção "Contato" hoje só mostra uma confirmação visual
-("Mensagem enviada") no navegador — como o GitHub Pages não roda backend,
-nenhum e-mail é enviado de fato. Para receber as mensagens de verdade no
-futuro, dá para plugar um serviço gratuito como o
-[Formspree](https://formspree.io) ou o [Getform](https://getform.io) sem
-precisar de servidor próprio.
+A seção "Contato" não tem mais formulário — por enquanto o contato é feito
+direto pelas redes sociais e pelo e-mail (motionmutum@gmail.com), destacados
+em `.social-spotlight`. Os links de Instagram, YouTube, Itch.io e Discord
+ainda estão como placeholder (`href="#"`) em `index.html` — troque pelas URLs
+reais assim que as contas existirem.

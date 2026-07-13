@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', function () {
   var navLinks = document.getElementById('navLinks');
   var menuToggle = document.getElementById('menuToggle');
   var wishlistBtn = document.getElementById('wishlistBtn');
-  var contactForm = document.getElementById('contactForm');
 
   menuToggle.addEventListener('click', function () {
     var open = navLinks.classList.toggle('open');
@@ -18,52 +17,42 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  function toggleLang() {
-    var to = lang === 'en' ? 'pt' : 'en';
+  var wishlistText = {
+    pt: ['Adicionar à wishlist', '✓ Na wishlist'],
+    en: ['Add to wishlist', '✓ On wishlist'],
+    es: ['Añadir a la lista de deseos', '✓ En la lista']
+  };
+
+  function setLang(to) {
     app.querySelectorAll('[data-en]').forEach(function (el) {
       if (el.dataset.pt === undefined) el.dataset.pt = el.textContent;
-      el.textContent = to === 'en' ? el.dataset.en : el.dataset.pt;
+      if (to === 'pt') el.textContent = el.dataset.pt;
+      else if (to === 'es') el.textContent = el.getAttribute('data-es');
+      else el.textContent = el.getAttribute('data-en');
     });
-    app.querySelectorAll('[data-en-ph]').forEach(function (el) {
-      if (el.dataset.ptPh === undefined) el.dataset.ptPh = el.getAttribute('placeholder') || '';
-      el.setAttribute('placeholder', to === 'en' ? el.getAttribute('data-en-ph') : el.dataset.ptPh);
+    document.querySelectorAll('.lang-btn').forEach(function (btn) {
+      btn.classList.toggle('is-active', btn.dataset.lang === to);
     });
-    document.querySelectorAll('[data-langbtn]').forEach(function (el) { el.textContent = to === 'en' ? 'PT' : 'EN'; });
+    document.documentElement.lang = to === 'pt' ? 'pt-BR' : (to === 'es' ? 'es' : 'en');
     lang = to;
   }
 
-  document.querySelectorAll('[data-langbtn]').forEach(function (btn) {
-    btn.addEventListener('click', toggleLang);
+  document.querySelectorAll('.lang-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () { setLang(btn.dataset.lang); });
   });
 
   wishlistBtn.addEventListener('click', function () {
-    var en = lang === 'en';
     var label = wishlistBtn.querySelector('[data-wl]');
+    var texts = wishlistText[lang] || wishlistText.pt;
     if (wishlistBtn.dataset.on === '1') {
       wishlistBtn.dataset.on = '0';
       wishlistBtn.style.background = '';
-      if (label) label.textContent = en ? 'Add to wishlist' : 'Adicionar à wishlist';
+      if (label) label.textContent = texts[0];
     } else {
       wishlistBtn.dataset.on = '1';
       wishlistBtn.style.background = '#7BC47F';
-      if (label) label.textContent = en ? '✓ On wishlist' : '✓ Na wishlist';
+      if (label) label.textContent = texts[1];
     }
-  });
-
-  contactForm.addEventListener('submit', function (e) {
-    e.preventDefault();
-    var en = lang === 'en';
-    var box = document.createElement('div');
-    box.className = 'form-success';
-    var t = document.createElement('div');
-    t.className = 'form-success-title';
-    t.textContent = en ? '✓ MESSAGE SENT' : '✓ MENSAGEM ENVIADA';
-    var s = document.createElement('div');
-    s.className = 'form-success-sub';
-    s.textContent = en ? "Thanks! We'll fly back to you soon. ★" : 'Valeu! A gente responde voando. ★';
-    box.appendChild(t);
-    box.appendChild(s);
-    contactForm.replaceWith(box);
   });
 
   // one-at-a-time auto-advancing carousels: screenshots/shorts/team (mobile
