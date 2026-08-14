@@ -47,6 +47,16 @@ Nome = referência ao **mutum-de-alagoas**, ave-símbolo do estado. Cores = band
    showreel, os 3 curtas e 2 das 3 miniaturas de screenshot do EVOLUA!.
 3. URLs reais de Discord (ainda `href="#"` em index.html).
 
+## Analytics (decisão)
+Arranjo escolhido: **Cloudflare Web Analytics** (sem cookie, sem banner) como número
+**oficial** de audiência — conta todo mundo. Beacon já instalado no fim do index.html
+(o token é identificador público, pode ficar versionado; API Token da Cloudflare, jamais). **GA4 fica para depois**, como camada de
+comportamento/campanha do lançamento do EVOLUA!, e aí exigirá banner de consentimento
+(Consent Mode v2, botões Aceitar/Recusar com o mesmo peso visual) e página de política de
+privacidade citando as duas ferramentas. Quando os dois coexistirem, os números não vão
+bater (30–50% de diferença é normal): não reconciliar, não tirar média.
+GitHub Pages não dá analytics — *Insights → Traffic* mede só o repositório no github.com.
+
 Já feitos: seção EVOLUA! com gênero/plataformas/sinopse corretos, seção Equipe (4 fundadores),
 menção ao apoio da Prefeitura/Cineclube no "Estúdio", logo reformulado e key art do EVOLUA!
 (bioma deserto — assets/evolua-deserto.jpg e o recorte assets/evolua-deserto-detalhe.jpg).
