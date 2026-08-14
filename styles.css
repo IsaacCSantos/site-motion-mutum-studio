@@ -194,6 +194,36 @@ input:focus,textarea:focus{outline:none;box-shadow:4px 4px 0 var(--red)}
 .social-link:hover{background:var(--hc);border-color:var(--hc)}
 .footer-bottom{max-width:1200px;margin:34px auto 0;padding-top:22px;border-top:2px solid rgba(246,237,217,.2);display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;font-size:12px;color:rgba(246,237,217,.6)}
 
+/* ===== consentimento (GA4) ===== */
+/* Faixa discreta no rodapé, nunca modal: não cobre a key art nem trava a leitura. */
+.footer-legal{color:rgba(246,237,217,.6);text-decoration:underline}
+.footer-legal:hover{color:var(--gold)}
+.consent{position:fixed;left:0;right:0;bottom:0;z-index:60;padding:16px;display:none}
+.consent.is-open{display:block}
+.consent-inner{max-width:1200px;margin:0 auto;background:var(--cream);border:3px solid var(--ink);box-shadow:6px 6px 0 var(--gold);padding:18px 20px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px}
+.consent-text{flex:1 1 400px;margin:0;font-size:14px;line-height:1.6;color:var(--ink)}
+.consent-text strong{display:block;font-family:var(--font-title);font-size:16px;margin-bottom:4px}
+.consent-text a{color:var(--blue);text-decoration:underline}
+.consent-actions{display:flex;gap:12px;flex-wrap:wrap}
+/* Aceitar e Recusar com o MESMO peso visual — exigência do GDPR, não capricho:
+   mesma fonte, mesmo tamanho, mesma borda, mesma sombra. Só muda a cor. */
+.btn--consent{font-size:10px;padding:14px 20px;color:var(--ink);border-color:var(--ink);box-shadow:4px 4px 0 var(--ink)}
+.btn--consent:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ink)}
+.btn--consent:active{transform:translate(4px,4px);box-shadow:0 0 0 var(--ink)}
+.btn--consent-yes{background:var(--gold)}
+.btn--consent-no{background:var(--stone)}
+
+/* ===== página de política de privacidade ===== */
+.legal-page{max-width:760px;margin:0 auto;padding:48px 24px 72px}
+.legal-page h1{font-family:var(--font-title);font-size:38px;line-height:1.15;margin:0 0 8px}
+.legal-updated{font-family:var(--font-pixel);font-size:9px;color:var(--ink);background:var(--gold);border:2px solid var(--ink);box-shadow:3px 3px 0 var(--ink);padding:7px 10px;display:inline-block}
+.legal-page h2{font-family:var(--font-title);font-size:22px;margin:38px 0 10px}
+.legal-page p,.legal-page li{font-size:15px;line-height:1.7}
+.legal-page ul{padding-left:22px}
+.legal-page a{color:var(--blue);text-decoration:underline}
+.legal-note{background:var(--cream-alt);border:3px solid var(--ink);box-shadow:5px 5px 0 var(--stone);padding:18px 20px;margin:28px 0}
+.legal-note p{margin:0 0 14px}
+
 /* ===== responsive: tablet ===== */
 @media (max-width:860px){
   .header-actions{display:flex}
@@ -227,4 +257,9 @@ input:focus,textarea:focus{outline:none;box-shadow:4px 4px 0 var(--red)}
   .section-title{font-size:26px}
   .section-pad{padding:44px 16px}
   .social-spotlight{grid-template-columns:repeat(2,1fr)}
+  .consent{padding:10px}
+  .consent-inner{padding:16px;gap:14px}
+  .consent-actions{width:100%}
+  .consent-actions .btn{flex:1 1 0;justify-content:center}
+  .legal-page h1{font-size:30px}
 }

@@ -6,10 +6,27 @@
 <title>Motion Mutum Estúdio — Jogos e Animação de Alagoas</title>
 <meta name="description" content="Estúdio indie de jogos e curtas de animação em Coruripe, Alagoas. Conheça EVOLUA! e nossos curtas de animação.">
 <link rel="icon" type="image/png" href="assets/mutum-bird.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Fredoka:wght@400;500;600;700&family=Nunito+Sans:ital,opsz,wght@0,6..12,400;0,6..12,600;0,6..12,700;0,6..12,800;0,6..12,900&display=swap" rel="stylesheet">
+<!-- Fontes auto-hospedadas: nada e pedido ao Google antes do consentimento (RGPD).
+     Regenerar com scripts/selfhost-fonts.py se as familias mudarem. -->
+<link rel="preload" href="assets/fonts/nunito-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/press-start-2p-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/fonts.css">
 <link rel="stylesheet" href="styles.css">
+
+<!-- Google Consent Mode v2 — defaults negados antes de qualquer coisa do Google.
+     Modo BÁSICO: o gtag.js só é baixado depois do "Aceitar" (ver script.js).
+     Nenhum contato com servidor do Google acontece sem consentimento. -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    analytics_storage: 'denied',
+    wait_for_update: 500
+  });
+</script>
 </head>
 <body>
 
@@ -291,9 +308,27 @@
     </div>
     <div class="footer-bottom">
       <span>© 2026 Motion Mutum Estúdio</span>
+      <a class="footer-legal" href="privacidade.html" data-en="Privacy policy" data-es="Política de privacidad">Política de privacidade</a>
       <span data-en="Made in Alagoas · Brazil ★" data-es="Hecho en Alagoas · Brasil ★">Feito em Alagoas · Brasil ★</span>
     </div>
   </footer>
+
+  <!-- ============ CONSENTIMENTO (GA4) ============ -->
+  <!-- Fica dentro de #app para que o setLang() traduza os textos junto com o resto.
+       Só aparece se GA_MEASUREMENT_ID estiver configurado em script.js. -->
+  <div class="consent" id="consentBanner" role="dialog" aria-live="polite" aria-label="Consentimento de cookies">
+    <div class="consent-inner">
+      <p class="consent-text">
+        <strong data-en="Cookies here are just for us to learn." data-es="Las cookies aquí solo sirven para que aprendamos.">Cookies aqui são só para a gente aprender.</strong>
+        <span data-en="We would like to use Google Analytics to understand which parts of the site people enjoy. It is your call — the site works exactly the same either way." data-es="Nos gustaría usar Google Analytics para entender qué partes del sitio le gustan a la gente. Tú decides — el sitio funciona igual de cualquier forma.">Gostaríamos de usar o Google Analytics para entender quais partes do site as pessoas curtem. A escolha é sua — o site funciona igual de qualquer jeito.</span>
+        <a href="privacidade.html" data-en="Read the privacy policy" data-es="Leer la política de privacidad">Leia a política de privacidade</a>
+      </p>
+      <div class="consent-actions">
+        <button class="btn btn--consent btn--consent-yes" id="consentAccept" data-en="Accept" data-es="Aceptar">Aceitar</button>
+        <button class="btn btn--consent btn--consent-no" id="consentReject" data-en="Decline" data-es="Rechazar">Recusar</button>
+      </div>
+    </div>
+  </div>
 
 </div>
 

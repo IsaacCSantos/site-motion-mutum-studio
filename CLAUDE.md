@@ -47,15 +47,40 @@ Nome = referência ao **mutum-de-alagoas**, ave-símbolo do estado. Cores = band
    showreel, os 3 curtas e 2 das 3 miniaturas de screenshot do EVOLUA!.
 3. URLs reais de Discord (ainda `href="#"` em index.html).
 
-## Analytics (decisão)
-Arranjo escolhido: **Cloudflare Web Analytics** (sem cookie, sem banner) como número
-**oficial** de audiência — conta todo mundo. Beacon já instalado no fim do index.html
-(o token é identificador público, pode ficar versionado; API Token da Cloudflare, jamais). **GA4 fica para depois**, como camada de
-comportamento/campanha do lançamento do EVOLUA!, e aí exigirá banner de consentimento
-(Consent Mode v2, botões Aceitar/Recusar com o mesmo peso visual) e página de política de
-privacidade citando as duas ferramentas. Quando os dois coexistirem, os números não vão
-bater (30–50% de diferença é normal): não reconciliar, não tirar média.
-GitHub Pages não dá analytics — *Insights → Traffic* mede só o repositório no github.com.
+## Analytics
+Duas camadas, de propósito. GitHub Pages não dá analytics nenhum — *Insights → Traffic*
+mede só o repositório no github.com, não o site publicado.
+
+- **Cloudflare Web Analytics** — sem cookie, sem banner, roda sempre. É o número
+  **oficial** de audiência, porque conta inclusive quem recusa o GA4. Beacon no fim do
+  index.html e do privacidade.html; o token é identificador público e pode ficar
+  versionado (API Token da Cloudflare, esse jamais).
+- **GA4** (`G-NF072C103G`, em `GA_MEASUREMENT_ID` no topo do script.js) — só de quem
+  aceita. Serve para comportamento e campanha, não para volume.
+
+**Os dois números nunca vão bater** — 30 a 50% de diferença é normal (recusa de
+consentimento + bloqueadores + definições diferentes de sessão). Não reconciliar, não
+tirar média: volume sai da Cloudflare, comportamento sai do GA4.
+
+Consent Mode v2 em **modo básico**: o gtag.js só é baixado depois do "Aceitar", então
+nenhum pedido chega ao Google sem consentimento. O modo avançado daria modelagem do
+tráfego recusado, mas ela exige ~1000 eventos/dia — longe da realidade atual. Trocar
+depois é uma linha em `loadGa()`.
+
+Banner em index.html (dentro do `#app`, para o `setLang()` traduzir junto). **Aceitar e
+Recusar têm peso visual idêntico de propósito** — exigência do GDPR contra dark pattern;
+não "melhorar" deixando o Aceitar maior. Página de política: privacidade.html, trilíngue,
+com botão de revogar. Eventos personalizados em script.js (idioma, wishlist, links
+externos, visualização da seção EVOLUA!) — sem eles o GA4 veria só 1 pageview, já que o
+site é uma página só.
+
+No painel do GA4: retenção em 14 meses (a política promete isso) e Sinais do Google
+desativado (contradiria os defaults de consentimento).
+
+**Fontes são auto-hospedadas** (assets/fonts.css + assets/fonts/*.woff2, gerados por
+`python scripts/selfhost-fonts.py`). Não voltar a linkar fonts.googleapis.com: isso
+manda o IP de todo visitante ao Google antes de qualquer consentimento — o caso que um
+tribunal de Munique julgou violação do RGPD em 2022. Só subsets latin/latin-ext.
 
 Já feitos: seção EVOLUA! com gênero/plataformas/sinopse corretos, seção Equipe (4 fundadores),
 menção ao apoio da Prefeitura/Cineclube no "Estúdio", logo reformulado e key art do EVOLUA!
