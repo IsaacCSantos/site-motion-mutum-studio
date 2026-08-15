@@ -7,6 +7,10 @@
   --blue:#2A3BC4;
   --gold:#F4B12A;
   --stone:#C7BFB0;
+  --slate:#73838F;   /* cinza do disco atras da logo (5.png) */
+  /* fundo do card do EVOLUA!, replicado do PNG da apresentação (3 paradas bastam:
+     erro máx. de 1/255 num canal contra a imagem original) */
+  --grad-evolua:linear-gradient(180deg,#C2FFB4 0%,#268D7C 50%,#123522 100%);
   --font-pixel:'Press Start 2P',monospace;
   --font-title:'Fredoka',sans-serif;
   --font-body:'Nunito Sans',sans-serif;
@@ -55,6 +59,7 @@ input:focus,textarea:focus{outline:none;box-shadow:4px 4px 0 var(--red)}
 .btn--lg{font-size:11px;padding:16px 22px;gap:10px}
 .btn--fill{background:var(--gold);color:var(--ink);border-color:var(--ink)}
 .btn--outline{background:transparent;color:var(--cream);border-color:var(--cream)}
+.btn--blue{background:var(--blue);color:var(--cream);border-color:var(--ink)}
 
 /* ===== language switch ===== */
 .lang-switch{display:inline-flex;border:3px solid var(--ink);box-shadow:3px 3px 0 var(--ink)}
@@ -76,7 +81,8 @@ input:focus,textarea:focus{outline:none;box-shadow:4px 4px 0 var(--red)}
 
 /* ===== small tag / pill chips ===== */
 .tag{font-family:var(--font-pixel);font-size:9px;border:2px solid var(--bd,var(--ink));padding:6px 9px;color:var(--fg,var(--ink));background:var(--bg,transparent)}
-.pill{font-family:var(--font-pixel);font-size:9px;color:var(--cream);background:transparent;border:2px solid var(--bd,var(--cream));padding:9px 12px}
+/* quadrados decorativos nas cores da bandeira de Alagoas (vermelho/branco/azul) */
+.pill{width:34px;height:34px;flex:0 0 auto;background:transparent;border:2px solid var(--bd,var(--cream))}
 
 /* ===== section heading system ===== */
 .section-pad{padding:82px 24px}
@@ -128,21 +134,23 @@ input:focus,textarea:focus{outline:none;box-shadow:4px 4px 0 var(--red)}
 .hero-ctas{display:flex;flex-wrap:wrap;gap:16px;margin-top:32px}
 
 .hero-figure{display:flex;justify-content:center;align-items:center;animation:mmfloat 6s ease-in-out infinite}
-.logo-frame{position:relative;min-width:0;max-width:100%;background:var(--stone);border:3px solid var(--ink);box-shadow:12px 12px 0 var(--gold);padding:26px}
+.logo-frame{position:relative;min-width:0;max-width:100%;background:var(--slate);border:3px solid var(--ink);box-shadow:12px 12px 0 var(--gold);padding:26px}
 .logo-img{width:100%;max-width:420px;height:auto;display:block}
 .est-badge{position:absolute;bottom:-16px;left:-16px;font-family:var(--font-pixel);font-size:9px;color:var(--ink);background:var(--cream);border:3px solid var(--ink);padding:7px 10px}
 
 /* ===== games / EVOLUA! ===== */
-.feature-grid{display:grid;grid-template-columns:1.08fr .92fr;background:var(--blue);border:3px solid var(--ink);box-shadow:12px 12px 0 var(--ink);overflow:hidden}
+.feature-grid{display:grid;grid-template-columns:1.08fr .92fr;background:var(--grad-evolua);border:3px solid var(--ink);box-shadow:12px 12px 0 var(--ink);overflow:hidden}
 .feature-media{position:relative;min-height:430px;border-right:3px solid var(--ink)}
 .feature-copy{padding:40px 38px;color:var(--cream);display:flex;flex-direction:column;justify-content:center}
 .tag-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
-.evolua-title{font-family:var(--font-title);font-weight:700;line-height:.95;margin:0;color:var(--gold);text-shadow:4px 4px 0 rgba(0,0,0,.35);font-size:52px}
-.evolua-lede{font-size:16.5px;line-height:1.6;margin:18px 0 0;color:rgba(246,237,217,.92)}
-.evolua-sublede{font-size:14px;line-height:1.55;margin:12px 0 0;color:rgba(246,237,217,.72)}
+.evolua-title{margin:0 auto;width:min(100%,330px)}
+.evolua-title img{display:block;width:100%;height:auto}
+.evolua-lede{font-size:16.5px;line-height:1.6;font-weight:700;margin:18px 0 0;color:var(--ink)}
+.evolua-sublede{font-size:14px;line-height:1.55;font-weight:700;margin:12px 0 0;color:rgba(26,21,18,.78)}
 .evolua-ctas{display:flex;flex-wrap:wrap;gap:14px;margin-top:28px}
 
 .shot-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.shot-grid--duo{grid-template-columns:repeat(2,1fr)}  /* so dois curtas anunciados */
 .shot-box{position:relative;height:200px;border:3px solid var(--ink);box-shadow:6px 6px 0 var(--ink)}
 
 /* ===== animation ===== */
@@ -156,22 +164,30 @@ input:focus,textarea:focus{outline:none;box-shadow:4px 4px 0 var(--red)}
 .short-body{padding:16px 18px}
 .short-title{font-family:var(--font-title);font-weight:600;font-size:20px}
 .short-status{font-family:var(--font-pixel);font-size:9px;margin-top:8px;color:var(--fg,var(--ink))}
+.short-body > .short-status:first-child{margin-top:0}  /* card sem titulo ainda nao anunciado */
 .short-status--outline{-webkit-text-stroke:.4px var(--ink)}
 
 /* ===== studio ===== */
 .studio-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
 .studio-copy{font-size:17px;line-height:1.7;margin:16px 0 0;color:rgba(246,237,217,.85)}
 .studio-note{font-size:15px;line-height:1.65;margin:16px 0 0;color:rgba(246,237,217,.7)}
-.studio-tags{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.studio-tags{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:28px}
 .studio-photo{position:relative;border:3px solid var(--cream);box-shadow:12px 12px 0 rgba(0,0,0,.45);aspect-ratio:4/3}
 
 /* ===== team ===== */
 .team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:38px}
-.team-card{background:#fff;border:3px solid var(--ink);box-shadow:8px 8px 0 var(--ink);padding:22px 20px;display:flex;flex-direction:column}
-.team-avatar{position:relative;width:104px;height:104px;margin:0 auto;border:3px solid var(--ink);border-radius:50%;box-shadow:4px 4px 0 var(--sh,var(--red));overflow:hidden}
-.team-name{font-family:var(--font-title);font-weight:600;font-size:21px;text-align:center;margin-top:16px}
-.team-role{font-family:var(--font-pixel);font-size:8px;line-height:1.5;text-align:center;margin-top:9px;color:var(--fg,var(--red))}
-.team-bio{font-size:13.5px;line-height:1.55;margin:14px 0 0;color:rgba(26,21,18,.72)}
+.team-card{background:var(--slate);border:3px solid var(--ink);box-shadow:8px 8px 0 var(--ink);padding:22px 20px;display:flex;flex-direction:column}
+/* retangulo alongado de cantos bem arredondados. As fotos foram reenquadradas
+   para o maior retangulo desse tipo inscrito na elipse original (97%), senao os
+   cantos brancos do recorte da concept apareceriam. Raio = 48% da largura,
+   entao ele acompanha a largura se ela mudar. */
+.team-avatar{position:relative;width:132px;aspect-ratio:1058/1314;margin:0 auto;border:3px solid var(--ink);border-radius:63px;box-shadow:4px 4px 0 var(--sh,var(--red));overflow:hidden}
+/* o ovo entra como background (--ovo por card, cada um com a sua rachadura) e o
+   texto vai por cima em HTML — por isso os PNGs sao exportados sem texto */
+.team-egg{position:relative;width:100%;max-width:165px;margin:14px auto 0;aspect-ratio:560/704;background:var(--ovo) center/contain no-repeat}
+.team-egg-copy{position:absolute;left:8%;right:8%;top:50%;transform:translateY(-50%);text-align:center}
+.team-name{font-family:var(--font-title);font-weight:600;font-size:16px;line-height:1.2;color:var(--ink)}
+.team-role{font-family:var(--font-title);font-weight:500;font-size:13.5px;line-height:1.3;margin-top:8px;color:var(--ink)}
 
 /* ===== contact ===== */
 .contact-intro{max-width:760px;margin:0 auto;text-align:center}
@@ -186,7 +202,7 @@ input:focus,textarea:focus{outline:none;box-shadow:4px 4px 0 var(--red)}
 .site-footer{background:var(--ink);color:var(--cream);padding:52px 24px 40px}
 .footer-top{display:flex;flex-wrap:wrap;gap:30px;justify-content:space-between;align-items:flex-start}
 .footer-brand{max-width:320px}
-.footer-logo-chip{display:inline-block;background:var(--stone);border:3px solid var(--ink);box-shadow:5px 5px 0 var(--gold);padding:12px 16px}
+.footer-logo-chip{display:inline-block;background:var(--slate);border:3px solid var(--ink);box-shadow:5px 5px 0 var(--gold);padding:12px 16px}
 .footer-logo-img{height:112px;width:auto;display:block}
 .footer-tagline{font-size:14px;line-height:1.6;margin:14px 0 0;color:rgba(246,237,217,.7)}
 .social-row{display:flex;gap:12px;flex-wrap:wrap}
@@ -240,7 +256,7 @@ input:focus,textarea:focus{outline:none;box-shadow:4px 4px 0 var(--red)}
   .feature-grid{grid-template-columns:1fr}
   .feature-media{min-height:260px}
   .feature-copy{padding:28px 24px}
-  .evolua-title{font-size:38px}
+  .evolua-title{width:min(100%,275px)}
   .section-title{font-size:34px}
   .section-pad{padding:56px 20px}
   .studio-grid{grid-template-columns:1fr;gap:32px}
