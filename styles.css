@@ -10,7 +10,11 @@
   --slate:#73838F;   /* cinza do disco atras da logo (5.png) */
   /* fundo do card do EVOLUA!, replicado do PNG da apresentação (3 paradas bastam:
      erro máx. de 1/255 num canal contra a imagem original) */
-  --grad-evolua:linear-gradient(180deg,#C2FFB4 0%,#268D7C 50%,#123522 100%);
+  /* Nao escurecer alem de #4DAA8A. Quem limita e o logo, nao o texto: a letra
+     azul-escura dele (#004894) cai abaixo de 3:1 a partir dai, enquanto o texto
+     preto ainda aguentaria ate #268D7C. Texto claro resolveria o fundo escuro,
+     mas ai o logo e que some — os dois pedem fundo claro. */
+  --grad-evolua:linear-gradient(180deg,#C2FFB4 0%,#4DAA8A 100%);
   --font-pixel:'Press Start 2P',monospace;
   --font-title:'Fredoka',sans-serif;
   --font-body:'Nunito Sans',sans-serif;
