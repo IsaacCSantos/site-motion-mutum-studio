@@ -172,8 +172,24 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   };
 
-  // links que levam para fora do site
+  // Cliques em redes sociais: os cartoes da secao de contato e os links do rodape.
+  // O nome vem do texto do link (INSTAGRAM, YOUTUBE...), que nao e traduzido, e nao
+  // do href — assim o Discord entra na contagem mesmo enquanto for href="#", e da
+  // para saber quanta gente procura por ele antes de existir servidor.
+  document.querySelectorAll('.social-card, .social-link').forEach(function (link) {
+    link.addEventListener('click', function () {
+      var labelEl = link.querySelector('.social-card-label');
+      var name = (labelEl ? labelEl.textContent : link.textContent).trim().toLowerCase();
+      track('social_click', {
+        network: name,
+        placement: link.classList.contains('social-link') ? 'rodape' : 'cartao'
+      });
+    });
+  });
+
+  // demais links que levam para fora do site
   document.querySelectorAll('a[target="_blank"], a[href^="mailto:"]').forEach(function (link) {
+    if (link.classList.contains('social-card') || link.classList.contains('social-link')) return;
     link.addEventListener('click', function () {
       track('outbound_click', { link_url: link.href });
     });
