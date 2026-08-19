@@ -79,6 +79,8 @@ input:focus,textarea:focus{outline:none;box-shadow:4px 4px 0 var(--red)}
 
 .btn-icon{font-size:12px}
 .btn--lg .btn-icon{font-size:13px}
+/* logo vetorial dentro de um botao (itch.io) — herda a cor do texto */
+.btn-logo{width:15px;height:15px;flex:none;display:block}
 
 /* ===== eyebrow badge (small pixel pill used above headings) ===== */
 .eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-pixel);font-size:10px;letter-spacing:.5px;padding:8px 12px;border:3px solid var(--bd,var(--ink));background:var(--bg,#fff);color:var(--fg,var(--ink));box-shadow:4px 4px 0 var(--sh,var(--ink))}

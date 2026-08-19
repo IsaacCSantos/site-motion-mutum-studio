@@ -7,7 +7,7 @@ Landing page estática do estúdio, publicada via GitHub Pages.
 ```
 index.html      → estrutura HTML da página
 styles.css      → todo o CSS (variáveis de cor/fonte no topo, depois os componentes)
-script.js       → toda a lógica (troca PT/EN/ES, menu mobile, wishlist)
+script.js       → toda a lógica (troca PT/EN/ES, menu mobile, consentimento/GA4)
 assets/         → imagens usadas pelo site (logo, ave, etc.)
 .nojekyll       → avisa ao GitHub Pages para não rodar o processamento Jekyll
 ```
@@ -57,6 +57,5 @@ assets/         → imagens usadas pelo site (logo, ave, etc.)
 
 A seção "Contato" não tem mais formulário — por enquanto o contato é feito
 direto pelas redes sociais e pelo e-mail (motionmutum@gmail.com), destacados
-em `.social-spotlight`. Os links de Instagram, YouTube, Itch.io e Discord
-ainda estão como placeholder (`href="#"`) em `index.html` — troque pelas URLs
-reais assim que as contas existirem.
+em `.social-spotlight`. Instagram, YouTube e Itch.io já apontam para as contas
+reais; o Discord foi removido do site enquanto não existir servidor.

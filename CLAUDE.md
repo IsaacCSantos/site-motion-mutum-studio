@@ -76,6 +76,13 @@ precisam ser reexportadas junto, ou os cantos brancos do recorte aparecem.
   Mario; atuais: Gris, Attack the Light.
 - Tags do card: EVOLUÇÃO / INFINITY RUNNING / PC · MOBILE — tema, gênero, plataformas.
   A tag "ARTE DIGITAL" foi substituída por "EVOLUÇÃO"; a técnica não é mais citada em lugar nenhum.
+- **Está no ar** em https://motionmutum.itch.io/evolua — protótipo HTML5, grátis, jogável no
+  navegador; só a Fase 1 (a corrida). O CTA do card leva para lá (`#itchBtn`, com o logo do
+  itch.io em SVG inline). Substituiu o botão de wishlist, que era decorativo — nunca houve
+  loja onde adicionar.
+- **O jogo não roda dentro do site** — decisão da equipe (ago/2026). Chegou a existir um
+  player na página (`.play-frame`) e ele foi removido; ver a nota no fim das Pendências
+  antes de refazer, porque a versão que existia já resolvia o problema de privacidade.
 
 **Restrição de contraste do card — não escurecer o gradiente.** O card empilha o logo do jogo
 sobre a sinopse, e os dois pedem fundo **claro**: as letras azul-escuras do logo (#004894) caem
@@ -104,6 +111,17 @@ Havia um terceiro card "título a definir", removido em ago/2026; a grade usa
      Publisher e festival, os públicos que a seção de contato chama, são justamente quem lê isso.
    - A menção ao **apoio da Prefeitura / Secretaria de Cultura e ao Cineclube**. Era a única
      prova pública da parceria que cede o espaço do estúdio, e sumiu do site inteiro.
+   - O **player do EVOLUA! na própria página** — o protótipo jogável rodando dentro do site,
+     em vez de só o link para o itch.io. Foi construído e removido no mesmo dia (ago/2026),
+     "por enquanto". Se voltar, **não colar a tag `<iframe>` crua**: o que existia era uma
+     fachada — um bloco `.play-frame` com logo, botão e aviso, e o `<iframe>` criado por JS
+     só no clique, para que nenhum IP de visitante chegue ao itch.io sem que ele tenha
+     pedido (mesma razão das fontes auto-hospedadas). O embed é
+     `https://itch.io/embed-upload/18871960?color=f0c0a8`, 980×620 — limitar a caixa a
+     980px evita ampliar o jogo acima da resolução nativa. **Esse código nunca foi commitado**,
+     então não há o que reverter: estes parágrafos são a fonte para refazer. Voltando, refazer
+     também o evento `game_play` no GA4 e o parágrafo "Outros serviços" de privacidade.html,
+     que hoje afirma que **nada** fica embutido na página.
 4. **CSS morto** — regras sem uso após as remoções de texto: `.games-summary`, `.studio-note`,
    `.team-lede`, `.evolua-sublede`, `.contact-lede`, `.short-status--outline`,
    `.social-card--outline`. E, de antes: `.btn--submit` + regras de `input`/`textarea`
@@ -137,7 +155,7 @@ depois é uma linha em `loadGa()`.
 Banner em index.html (dentro do `#app`, para o `setLang()` traduzir junto). **Aceitar e
 Recusar têm peso visual idêntico de propósito** — exigência do GDPR contra dark pattern;
 não "melhorar" deixando o Aceitar maior. Página de política: privacidade.html, trilíngue,
-com botão de revogar. Eventos personalizados em script.js (idioma, wishlist, links
+com botão de revogar. Eventos personalizados em script.js (idioma, `itch_click`, links
 externos, visualização da seção EVOLUA!) — sem eles o GA4 veria só 1 pageview, já que o
 site é uma página só.
 
@@ -154,9 +172,29 @@ título em texto (assets/evolua-logo.png), seção Equipe com os 4 fundadores no
 logo reformulado e key art do EVOLUA! (bioma deserto — assets/evolua-deserto.jpg e o recorte
 assets/evolua-deserto-detalhe.jpg), curtas com títulos reais.
 
-**Aviso de verificação:** a reforma de ago/2026 (equipe, EVOLUA!, curtas, cores) foi feita
-sem navegador disponível no ambiente. Assets, contrastes e enquadramentos foram conferidos
-por medição e composição em imagem, mas **o layout renderizado nunca foi visto**. Os cards da
-equipe foram reconstruídos do zero e são o ponto de maior risco — o texto sobre o ovo é
-posicionado em absoluto e não tem rede de segurança se algum cargo crescer ou for traduzido
-para algo mais longo. Vale um passe visual em PT, EN e ES.
+## Como ver o site renderizado (dá, sim)
+Existe Chrome nesta máquina e ele tira print sem abrir janela:
+
+```
+"/c/Program Files/Google/Chrome/Application/chrome.exe" --headless=new --disable-gpu \
+  --hide-scrollbars --virtual-time-budget=5000 --window-size=1400,4200 \
+  --screenshot=saida.png "file:///C:/Users/Casa/Documents/Projetos/Motion%20Mutum%20est%C3%BAdio/index.html"
+```
+
+Duas armadilhas achadas na marra:
+- **O headless não desce abaixo de ~500px de largura.** Pedir `--window-size=390` gera uma
+  imagem de 390px, mas o layout continua sendo calculado a 500 e a imagem sai *cortada* —
+  parece estouro horizontal e não é. Para testar celular, use 500 e recorte com PIL.
+- **O beacon da Cloudflare segura o evento `load`** offline (a requisição não resolve). Se
+  for injetar script de teste, use `DOMContentLoaded`, ou tire o beacon da cópia de teste.
+
+Para testar EN/ES ou o clique no player, copie o index.html para um `_probe.html`, injete
+um `<script>` antes de `</body>` que dispare `.lang-btn[data-lang="es"].click()` ou
+`#playBtn.click()`, tire o print e **apague a cópia**.
+
+**Aviso de verificação:** a reforma de ago/2026 (equipe, curtas, cores) foi feita antes de
+alguém descobrir o comando acima — assets, contrastes e enquadramentos foram conferidos por
+medição e composição em imagem, mas **aquele layout nunca foi visto renderizado**. O botão
+do itch.io e o player já foram vistos em PT, EN e ES. O que continua sem passe visual são os
+**cards da equipe**, reconstruídos do zero: o texto sobre o ovo é posicionado em absoluto e
+não tem rede de segurança se algum cargo crescer ou for traduzido para algo mais longo.

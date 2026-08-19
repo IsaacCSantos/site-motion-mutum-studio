@@ -53,11 +53,10 @@ function track(name, params) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-  var lang = 'pt';
   var app = document.getElementById('app') || document.body;
   var navLinks = document.getElementById('navLinks');
   var menuToggle = document.getElementById('menuToggle');
-  var wishlistBtn = document.getElementById('wishlistBtn');
+  var itchBtn = document.getElementById('itchBtn');
 
   if (menuToggle && navLinks) {
     menuToggle.addEventListener('click', function () {
@@ -73,12 +72,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  var wishlistText = {
-    pt: ['Adicionar à wishlist', '✓ Na wishlist'],
-    en: ['Add to wishlist', '✓ On wishlist'],
-    es: ['Añadir a la lista de deseos', '✓ En la lista']
-  };
-
   function setLang(to) {
     app.querySelectorAll('[data-en]').forEach(function (el) {
       if (el.dataset.pt === undefined) el.dataset.pt = el.textContent;
@@ -90,7 +83,6 @@ document.addEventListener('DOMContentLoaded', function () {
       btn.classList.toggle('is-active', btn.dataset.lang === to);
     });
     document.documentElement.lang = to === 'pt' ? 'pt-BR' : (to === 'es' ? 'es' : 'en');
-    lang = to;
   }
 
   document.querySelectorAll('.lang-btn').forEach(function (btn) {
@@ -100,20 +92,12 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  if (wishlistBtn) {
-    wishlistBtn.addEventListener('click', function () {
-      var label = wishlistBtn.querySelector('[data-wl]');
-      var texts = wishlistText[lang] || wishlistText.pt;
-      if (wishlistBtn.dataset.on === '1') {
-        wishlistBtn.dataset.on = '0';
-        wishlistBtn.style.background = '';
-        if (label) label.textContent = texts[0];
-      } else {
-        wishlistBtn.dataset.on = '1';
-        wishlistBtn.style.background = '#7BC47F';
-        if (label) label.textContent = texts[1];
-        track('wishlist_add', { item_name: 'EVOLUA!' });
-      }
+  // Evento proprio (e nao so o outbound_click generico) porque este e o unico
+  // caminho do site para o jogo — vale ter um nome fixo para marcar como evento
+  // principal no GA4.
+  if (itchBtn) {
+    itchBtn.addEventListener('click', function () {
+      track('itch_click', { item_name: 'EVOLUA!' });
     });
   }
 
@@ -190,6 +174,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // demais links que levam para fora do site
   document.querySelectorAll('a[target="_blank"], a[href^="mailto:"]').forEach(function (link) {
     if (link.classList.contains('social-card') || link.classList.contains('social-link')) return;
+    if (link === itchBtn) return;  // ja contado como itch_click
     link.addEventListener('click', function () {
       track('outbound_click', { link_url: link.href });
     });
